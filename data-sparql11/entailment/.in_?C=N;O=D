@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>Index of /2009/sparql/docs/tests/data-sparql11/entailment</title>
+ </head>
+ <body>
+<h1>Index of /2009/sparql/docs/tests/data-sparql11/entailment</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]" width="20" height="22" /></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr /></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]" width="20" height="22" /></td><td><a href="/2009/sparql/docs/tests/data-sparql11/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs13.ttl">rdfs13.ttl</a></td><td align="right">07-Sep-2010 15:41  </td><td align="right"> 58 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs13.srx">rdfs13.srx</a></td><td align="right">07-Sep-2010 15:41  </td><td align="right">259 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs13.rq">rdfs13.rq</a></td><td align="right">07-Sep-2010 15:41  </td><td align="right"> 94 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs12.ttl">rdfs12.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">297 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs12.srx">rdfs12.srx</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">673 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs12.rq">rdfs12.rq</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">159 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs11.ttl">rdfs11.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">113 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs11.srx">rdfs11.srx</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">676 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs11.rq">rdfs11.rq</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">148 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs10.ttl">rdfs10.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">207 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs10.srx">rdfs10.srx</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">493 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs10.rq">rdfs10.rq</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">125 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs09.ttl">rdfs09.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">202 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs09.srx">rdfs09.srx</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">383 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs09.rq">rdfs09.rq</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">131 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs08.ttl">rdfs08.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">130 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs08.srx">rdfs08.srx</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">546 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs08.rq">rdfs08.rq</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">133 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs07.ttl">rdfs07.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">139 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs07.srx">rdfs07.srx</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">497 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs07.rq">rdfs07.rq</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right"> 74 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs06.ttl">rdfs06.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">140 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs06.srx">rdfs06.srx</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">497 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs06.rq">rdfs06.rq</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right"> 74 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs05.ttl">rdfs05.ttl</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">211 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs05.srx">rdfs05.srx</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">686 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs05.rq">rdfs05.rq</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">215 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs04.ttl">rdfs04.ttl</a></td><td align="right">01-Jul-2010 10:12  </td><td align="right">145 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs04.srx">rdfs04.srx</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">497 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs04.rq">rdfs04.rq</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right"> 74 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs03.ttl">rdfs03.ttl</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">176 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs03.srx">rdfs03.srx</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">497 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs03.rq">rdfs03.rq</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right"> 75 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs02.ttl">rdfs02.ttl</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">153 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs02.srx">rdfs02.srx</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">383 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs02.rq">rdfs02.rq</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right"> 75 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdfs01.ttl">rdfs01.ttl</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">153 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs01.srx">rdfs01.srx</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">497 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]" width="20" height="22" /></td><td><a href="rdfs01.rq">rdfs01.rq</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right"> 74 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]" width="20" height="22" /></td><td><a href="rdf04.ttl">rdf04.ttl</a></td><td align="right">30-Jun-2010 16:39  </td><td align="right">127 <
