@@ -21,6 +21,10 @@
     :pp10
     :pp11
     :pp12
+    :pp13
+    :pp14
+    :pp15
+    :pp16
 
     :pp20
     :pp21
@@ -140,6 +144,44 @@
            qt:data   <pp11.ttl>] ;
     mf:result  <pp12.srx> 
     .
+
+:pp13 rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Zero Length Paths with Literals" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <pp13.rq> ;
+           qt:data   <pp13.ttl>] ;
+    mf:result  <pp13.srx> 
+    .
+
+:pp14 rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Star path over foaf:knows" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <pp14.rq> ;
+           qt:data   <pp14.ttl>] ;
+    mf:result  <pp14.srx> 
+    .
+
+:pp15 rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Zero Length Paths on an empty graph" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <pp15.rq> ;
+           qt:data   <empty.ttl>] ;
+    mf:result  <pp15.srx> 
+    .
+
+:pp16 rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Duplicate paths and cycles through foaf:knows*" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <pp14.rq> ;
+           qt:data   <pp16.ttl>] ;
+    mf:result  <pp16.srx> 
+    .
+
+
 
 :pp20 rdf:type mf:QueryEvaluationTest ;
     dawgt:approval dawgt:NotClassified ;
