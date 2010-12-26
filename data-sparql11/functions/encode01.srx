@@ -9,12 +9,12 @@
 		<result>
 			<binding name="s"><uri>http://example.org/s2</uri></binding>
 			<binding name="str"><literal xml:lang="en">bar</literal></binding>
-			<binding name="encoded"><literal>bar</literal></binding>
+			<binding name="encoded"><literal xml:lang="en">bar</literal></binding>
 		</result>
 		<result>
 			<binding name="s"><uri>http://example.org/s7</uri></binding>
 			<binding name="str"><literal datatype="http://www.w3.org/2001/XMLSchema#string">DEF</literal></binding>
-			<binding name="encoded"><literal>DEF</literal></binding>
+			<binding name="encoded"><literal datatype="http://www.w3.org/2001/XMLSchema#string">DEF</literal></binding>
 		</result>
 		<result>
 			<binding name="s"><uri>http://example.org/s3</uri></binding>
@@ -29,7 +29,7 @@
 		<result>
 			<binding name="s"><uri>http://example.org/s6</uri></binding>
 			<binding name="str"><literal datatype="http://www.w3.org/2001/XMLSchema#string">abc</literal></binding>
-			<binding name="encoded"><literal>abc</literal></binding>
+			<binding name="encoded"><literal datatype="http://www.w3.org/2001/XMLSchema#string">abc</literal></binding>
 		</result>
 		<result>
 			<binding name="s"><uri>http://example.org/s1</uri></binding>
