@@ -23,16 +23,16 @@
     mf:action [
     			ut:request <clear-default-01.ru> ; 
                 ut:data <clear-default.ttl> ;
-                ut:graphData [ ut:graph <clear-g1.ttl> ;
+                ut:graphData [ ut:data <clear-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <clear-g2.ttl> ;
+                ut:graphData [ ut:data <clear-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [
                 ut:data <empty.ttl> ;
-                ut:graphData [ ut:graph <clear-g1.ttl> ;
+                ut:graphData [ ut:data <clear-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <clear-g2.ttl> ;
+                ut:graphData [ ut:data <clear-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     .
@@ -44,16 +44,16 @@
     mf:action [
     			ut:request <clear-graph-01.ru> ; 
                 ut:data <clear-default.ttl> ;
-                ut:graphData [ ut:graph <clear-g1.ttl> ;
+                ut:graphData [ ut:data <clear-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <clear-g2.ttl> ;
+                ut:graphData [ ut:data <clear-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [
     			ut:data <clear-default.ttl> ;
-                ut:graphData [ ut:graph <empty.ttl> ;
+                ut:graphData [ ut:data <empty.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <clear-g2.ttl> ;
+                ut:graphData [ ut:data <clear-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     .
@@ -65,16 +65,16 @@
     mf:action [
     			ut:request <clear-named-01.ru> ; 
                 ut:data <clear-default.ttl> ;
-                ut:graphData [ ut:graph <clear-g1.ttl> ;
+                ut:graphData [ ut:data <clear-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <clear-g2.ttl> ;
+                ut:graphData [ ut:data <clear-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [
     			ut:data <clear-default.ttl> ;
-                ut:graphData [ ut:graph <empty.ttl> ;
+                ut:graphData [ ut:data <empty.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <empty.ttl> ;
+                ut:graphData [ ut:data <empty.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     .
@@ -86,16 +86,16 @@
     mf:action [
     			ut:request <clear-all-01.ru> ; 
                 ut:data <clear-default.ttl> ;
-                ut:graphData [ ut:graph <clear-g1.ttl> ;
+                ut:graphData [ ut:data <clear-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <clear-g2.ttl> ;
+                ut:graphData [ ut:data <clear-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [
     			ut:data <empty.ttl> ;
-                ut:graphData [ ut:graph <empty.ttl> ;
+                ut:graphData [ ut:data <empty.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <empty.ttl> ;
+                ut:graphData [ ut:data <empty.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     .

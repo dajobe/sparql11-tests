@@ -23,15 +23,15 @@
     mf:action [
     			ut:request <drop-default-01.ru> ; 
                 ut:data <drop-default.ttl> ;
-                ut:graphData [ ut:graph <drop-g1.ttl> ;
+                ut:graphData [ ut:data <drop-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <drop-g2.ttl> ;
+                ut:graphData [ ut:data <drop-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [
-                ut:graphData [ ut:graph <drop-g1.ttl> ;
+                ut:graphData [ ut:data <drop-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <drop-g2.ttl> ;
+                ut:graphData [ ut:data <drop-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     .
@@ -43,14 +43,14 @@
     mf:action [
     			ut:request <drop-graph-01.ru> ; 
                 ut:data <drop-default.ttl> ;
-                ut:graphData [ ut:graph <drop-g1.ttl> ;
+                ut:graphData [ ut:data <drop-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <drop-g2.ttl> ;
+                ut:graphData [ ut:data <drop-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [
     			ut:data <drop-default.ttl> ;
-                ut:graphData [ ut:graph <drop-g2.ttl> ;
+                ut:graphData [ ut:data <drop-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     .
@@ -62,9 +62,9 @@
     mf:action [
     			ut:request <drop-named-01.ru> ; 
                 ut:data <drop-default.ttl> ;
-                ut:graphData [ ut:graph <drop-g1.ttl> ;
+                ut:graphData [ ut:data <drop-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <drop-g2.ttl> ;
+                ut:graphData [ ut:data <drop-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [
@@ -79,9 +79,9 @@
     mf:action [
     			ut:request <drop-all-01.ru> ; 
                 ut:data <drop-default.ttl> ;
-                ut:graphData [ ut:graph <drop-g1.ttl> ;
+                ut:graphData [ ut:data <drop-g1.ttl> ;
                                rdfs:label "http://example.org/g1" ] ;
-                ut:graphData [ ut:graph <drop-g2.ttl> ;
+                ut:graphData [ ut:data <drop-g2.ttl> ;
                                rdfs:label "http://example.org/g2" ] ;
               ] ;
     mf:result [] ;
