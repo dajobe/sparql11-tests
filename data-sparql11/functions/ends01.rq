@@ -2,5 +2,5 @@ PREFIX : <http://example.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT ?s ?str WHERE {
 	?s ?p ?str
-	FILTER ENDS(?str, "bc")
+	FILTER STRENDS(?str, "bc")
 }
