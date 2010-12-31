@@ -2,12 +2,12 @@
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
 <head>
 	<variable name="s"/>
-	<variable name="str"/>
+	<variable name="s2"/>
 </head>
 <results>
 		<result>
 			<binding name="s"><uri>http://example.org/s2</uri></binding>
-			<binding name="str"><literal xml:lang="en-us">bar</literal></binding>
+			<binding name="s2"><literal xml:lang="en-US">bar</literal></binding>
 		</result>
 </results>
 </sparql>
