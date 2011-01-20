@@ -10,7 +10,9 @@
     mf:entries
     ( 
 	:strdt01
+	:strdt02
 	:strlang01
+	:strlang02
 	:isnumeric01
 	:abs01
 	:ceil01
@@ -42,6 +44,7 @@
 	:year
 	:day
 	:timezone
+	:tz
  ) .
 
 
@@ -54,6 +57,15 @@
     mf:result  <strdt01.srx> ;
 	.
 
+:strdt02 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "STRDT(STR())" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <strdt02.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <strdt02.srx> ;
+	.
+
 :strlang01 rdf:type mf:QueryEvaluationTest ;
 	mf:name    "STRLANG()" ;
     dawgt:approval dawgt:NotClassified ;
@@ -61,6 +73,15 @@
          [ qt:query  <strlang01.rq> ;
            qt:data   <data.ttl> ] ;
     mf:result  <strlang01.srx> ;
+	.
+
+:strlang02 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "STRLANG(STR())" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <strlang02.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <strlang02.srx> ;
 	.
 
 :isnumeric01 rdf:type mf:QueryEvaluationTest ;
@@ -163,7 +184,7 @@
 	.
 
 :encode01 rdf:type mf:QueryEvaluationTest ;
-	mf:name    "ENCODE()" ;
+	mf:name    "ENCODE_FOR_URI()" ;
     dawgt:approval dawgt:NotClassified ;
     mf:action
          [ qt:query  <encode01.rq> ;
@@ -342,5 +363,14 @@
          [ qt:query  <timezone-01.rq> ;
            qt:data   <data.ttl> ] ;
     mf:result  <timezone-01.srx> ;
+	.
+
+:tz rdf:type mf:QueryEvaluationTest ;
+	mf:name    "TZ()" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <tz-01.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <tz-01.srx> ;
 	.
 

@@ -1,2 +1,7 @@
-CREATE GRAPH <g> ;
-LOAD <remote> INTO GRAPH <g> ;
+PREFIX  :     <http://example/>
+WITH :g
+DELETE {
+  <base:s> ?p ?o .
+}
+WHERE
+  { ?s ?p ?o }
