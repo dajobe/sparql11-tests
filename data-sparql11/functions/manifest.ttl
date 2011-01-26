@@ -11,14 +11,17 @@
     ( 
 	:strdt01
 	:strdt02
+	:strdt03
 	:strlang01
 	:strlang02
+	:strlang03
 	:isnumeric01
 	:abs01
 	:ceil01
 	:floor01
 	:round01
 	:concat01
+	:concat02
 	:substring01
 	:substring02
 	:length01
@@ -45,6 +48,11 @@
 	:day
 	:timezone
 	:tz
+	:bnode01
+	:in01
+	:in02
+	:notin01
+	:notin02
  ) .
 
 
@@ -66,6 +74,15 @@
     mf:result  <strdt02.srx> ;
 	.
 
+:strdt03 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "STRDT() TypeErrors" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <strdt03.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <strdt03.srx> ;
+	.
+
 :strlang01 rdf:type mf:QueryEvaluationTest ;
 	mf:name    "STRLANG()" ;
     dawgt:approval dawgt:NotClassified ;
@@ -82,6 +99,15 @@
          [ qt:query  <strlang02.rq> ;
            qt:data   <data.ttl> ] ;
     mf:result  <strlang02.srx> ;
+	.
+
+:strlang03 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "STRLANG() TypeErrors" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <strlang03.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <strlang03.srx> ;
 	.
 
 :isnumeric01 rdf:type mf:QueryEvaluationTest ;
@@ -136,6 +162,15 @@
          [ qt:query  <concat01.rq> ;
            qt:data   <data.ttl> ] ;
     mf:result  <concat01.srx> ;
+	.
+
+:concat02 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "CONCAT() 2" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <concat02.rq> ;
+           qt:data   <data2.ttl> ] ;
+    mf:result  <concat02.srx> ;
 	.
 
 :substring01 rdf:type mf:QueryEvaluationTest ;
@@ -372,5 +407,50 @@
          [ qt:query  <tz-01.rq> ;
            qt:data   <data.ttl> ] ;
     mf:result  <tz-01.srx> ;
+	.
+
+:bnode01 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "BNODE()" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <bnode01.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <bnode01.srx> ;
+	.
+
+:in01 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "IN 1" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <in01.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <in01.srx> ;
+	.
+
+:in02 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "IN 2" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <in02.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <in02.srx> ;
+	.
+
+:notin01 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "NOT IN 1" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <notin01.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <notin01.srx> ;
+	.
+
+:notin02 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "NOT IN 2" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <notin02.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <notin02.srx> ;
 	.
 

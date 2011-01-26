@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+<head>
+	<variable name="s"/>
+	<variable name="str1"/>
+</head>
+<results>
+		<result>
+			<binding name="s1"><literal>BAZ</literal></binding>
+			<binding name="s2"><literal>BAZ</literal></binding>
+			<binding name="b1"><bnode>b0</bnode></binding>
+			<binding name="b2"><bnode>b0</bnode></binding>
+		</result>
+		<result>
+			<binding name="s1"><literal>foo</literal></binding>
+			<binding name="s2"><literal>foo</literal></binding>
+			<binding name="b1"><bnode>b1</bnode></binding>
+			<binding name="b2"><bnode>b1</bnode></binding>
+		</result>
+		<result>
+			<binding name="s1"><literal>foo</literal></binding>
+			<binding name="s2"><literal>BAZ</literal></binding>
+			<binding name="b1"><bnode>b2</bnode></binding>
+			<binding name="b2"><bnode>b3</bnode></binding>
+		</result>
+		<result>
+			<binding name="s1"><literal>BAZ</literal></binding>
+			<binding name="s2"><literal>foo</literal></binding>
+			<binding name="b1"><bnode>b4</bnode></binding>
+			<binding name="b2"><bnode>b5</bnode></binding>
+		</result>
+</results>
+</sparql>
+
