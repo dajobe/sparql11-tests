@@ -24,4 +24,7 @@
         <syntax-query/manifest.ttl>
         <syntax-update-1/manifest.ttl>
         <syntax-update-2/manifest.ttl>
+
+        <json-res/manifest.ttl>
+        <construct/manifest.ttl>
     ).

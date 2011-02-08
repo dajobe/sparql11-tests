@@ -32,8 +32,6 @@
     :agg-min-02
     :agg-max-01
     :agg-max-02
-    :agg-sum-01
-    :agg-sum-02
     :agg-sample-01 
 ) .
 
@@ -191,7 +189,7 @@
     dawgt:approval dawgt:NotClassified;
     mf:action
          [ qt:query  <agg-avg-02.rq> ;
-           qt:data   <agg-numeric.ttl> ] ;
+           qt:data   <agg-numeric2.ttl> ] ;
     mf:result  <agg-avg-02.srx>
     .
 
@@ -245,7 +243,7 @@
     dawgt:approval dawgt:NotClassified;
     mf:action
          [ qt:query  <agg-sum-02.rq> ;
-           qt:data   <agg-numeric.ttl> ] ;
+           qt:data   <agg-numeric2.ttl> ] ;
     mf:result  <agg-sum-02.srx>
     .
 

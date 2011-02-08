@@ -49,10 +49,14 @@
 	:timezone
 	:tz
 	:bnode01
+	:bnode02
 	:in01
 	:in02
 	:notin01
 	:notin02
+	:now01
+	:rand01
+	:iri01
  ) .
 
 
@@ -410,7 +414,7 @@
 	.
 
 :bnode01 rdf:type mf:QueryEvaluationTest ;
-	mf:name    "BNODE()" ;
+	mf:name    "BNODE(str)" ;
     dawgt:approval dawgt:NotClassified ;
     mf:action
          [ qt:query  <bnode01.rq> ;
@@ -452,5 +456,41 @@
          [ qt:query  <notin02.rq> ;
            qt:data   <data.ttl> ] ;
     mf:result  <notin02.srx> ;
+	.
+
+:now01 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "NOW()" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <now01.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <now01.srx> ;
+	.
+
+:rand01 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "RAND()" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <rand01.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <rand01.srx> ;
+	.
+
+:bnode02 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "BNODE()" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <bnode02.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <bnode02.srx> ;
+	.
+
+:iri01 rdf:type mf:QueryEvaluationTest ;
+	mf:name    "IRI()/URI()" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <iri01.rq> ;
+           qt:data   <data.ttl> ] ;
+    mf:result  <iri01.srx> ;
 	.
 

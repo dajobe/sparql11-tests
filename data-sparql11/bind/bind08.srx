@@ -7,5 +7,19 @@
     <variable name="z"/>
   </head>
   <results>
+    <result>
+      <binding name="s">
+        <uri>http://example.org/s2</uri>
+      </binding>
+      <binding name="p">
+        <uri>http://example.org/p</uri>
+      </binding>
+      <binding name="o">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#integer">2</literal>
+      </binding>
+      <binding name="z">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#integer">3</literal>
+      </binding>
+    </result>
   </results>
 </sparql>
