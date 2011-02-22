@@ -147,7 +147,7 @@
     mf:result [ ut:data <delete-insert-pre-06.ttl>
               ] .
 
-:dawg-delete-insert-7 a ut:UpdateEvaluationTest ;
+:dawg-delete-insert-07 a ut:UpdateEvaluationTest ;
     mf:name    "DELETE INSERT 7" ;
     rdfs:comment "This deletes all foaf:knows relations from anyone named 'Alan' and inserts a single foaf:knows triple with a blank node as object for 'Alan'. This shows the different behavior of bnodes in INSERT (similar to CONSTRUCT) and DELETE (bnodes act as wildcards) templates." ;
     dawgt:approval dawgt:NotClassified ;
@@ -157,7 +157,7 @@
     mf:result [ ut:data <delete-insert-post-07.ttl>
               ] .
 
-:dawg-delete-insert-7b a ut:UpdateEvaluationTest ;
+:dawg-delete-insert-07b a ut:UpdateEvaluationTest ;
     mf:name    "DELETE INSERT 7b" ;
     rdfs:comment "This deletes all foaf:knows relations from anyone named 'Alan' and replaces them by bnodes. This shows the different behavior of bnodes in INSERT (similar to CONSTRUCT) and DELETE (bnodes act as wildcards) templates. As opposed to test case dawg-delete-insert-7, note that the result graph in this example is non-lean." ;
     dawgt:approval dawgt:NotClassified ;
