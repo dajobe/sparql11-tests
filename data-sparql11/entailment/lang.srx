@@ -5,23 +5,11 @@
     xmlns="http://www.w3.org/2005/sparql-results#" >
   <head>
     <variable name="x"/>
-    <variable name="y"/>
   </head>
   <results>
     <result>
       <binding name="x">
-        <uri>http://example.org/x/x</uri>
-      </binding>
-      <binding name="y">
-        <uri>http://example.org/x/y</uri>
-      </binding>
-    </result>
-    <result>
-      <binding name="x">
-        <uri>http://example.org/x/x</uri>
-      </binding>
-      <binding name="y">
-        <bnode>y</bnode>
+        <uri>http://example.org/test#b</uri>
       </binding>
     </result>
   </results>
