@@ -37,6 +37,11 @@
     :pp27
     :pp28
     :pp29
+
+    :pp30
+    :pp31
+    :pp32
+    :pp33
  ) .
 
 
@@ -276,5 +281,41 @@
         [ qt:query  <path-3-4.rq> ;
           qt:data   <data-diamond-loop.ttl> ] ;
     mf:result  <diamond-loop-6.srx>
+    .
+
+:pp30  rdf:type mf:QueryEvaluationTest ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:name    "(pp30) Operator precedence 1" ;
+    mf:action
+        [ qt:query  <path-p1.rq> ;
+          qt:data   <path-p1.ttl> ] ;
+    mf:result  <path-p1.srx>
+    .
+
+:pp31  rdf:type mf:QueryEvaluationTest ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:name    "(pp31) Operator precedence 2" ;
+    mf:action
+        [ qt:query  <path-p2.rq> ;
+          qt:data   <path-p1.ttl> ] ;
+    mf:result  <path-p2.srx>
+    .
+
+:pp32  rdf:type mf:QueryEvaluationTest ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:name    "(pp32) Operator precedence 3" ;
+    mf:action
+        [ qt:query  <path-p3.rq> ;
+          qt:data   <path-p3.ttl> ] ;
+    mf:result  <path-p3.srx>
+    .
+
+:pp33  rdf:type mf:QueryEvaluationTest ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:name    "(pp33) Operator precedence 4" ;
+    mf:action
+        [ qt:query  <path-p4.rq> ;
+          qt:data   <path-p3.ttl> ] ;
+    mf:result  <path-p4.srx>
     .
 
