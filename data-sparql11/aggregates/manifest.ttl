@@ -108,7 +108,7 @@
     mf:result  <agg07.srx>
     .
 
-:agg08 rdf:type  mf:NegativeSyntaxTest;
+:agg08 rdf:type  mf:NegativeSyntaxTest11;
     mf:name    "COUNT 8" ;
     rdfs:comment "grouping by expression, done wrong";
     dawgt:approval dawgt:NotClassified ;
@@ -123,32 +123,28 @@
            qt:data   <agg08.ttl> ] ;
     mf:result  <agg08b.srx> .
 
-:agg09 rdf:type  mf:NegativeSyntaxTest;
+:agg09 rdf:type  mf:NegativeSyntaxTest11;
     mf:name    "COUNT 9" ;
     rdfs:comment "Projection of an ungrouped variable (not appearing in the GROUP BY expression)";
     dawgt:approval dawgt:NotClassified ;
-    rdf:type   mf:NegativeSyntaxTest ;
     mf:action  <agg09.rq> .
 
-:agg10 rdf:type  mf:NegativeSyntaxTest;
+:agg10 rdf:type  mf:NegativeSyntaxTest11;
     mf:name    "COUNT 10" ;
     rdfs:comment "Projection of an ungrouped variable (no GROUP BY expression at all)";
     dawgt:approval dawgt:NotClassified ;
-    rdf:type   mf:NegativeSyntaxTest ;
     mf:action  <agg10.rq> .
 
-:agg11 rdf:type  mf:NegativeSyntaxTest;
+:agg11 rdf:type  mf:NegativeSyntaxTest11;
     mf:name    "COUNT 11" ;
     rdfs:comment "Use of an ungrouped variable in a project expression";
     dawgt:approval dawgt:NotClassified ;
-    rdf:type   mf:NegativeSyntaxTest ;
     mf:action  <agg11.rq> .
 
-:agg12 rdf:type  mf:NegativeSyntaxTest;
+:agg12 rdf:type  mf:NegativeSyntaxTest11;
     mf:name    "COUNT 12" ;
     rdfs:comment "Use of an ungrouped variable in a project expression, where the variable appears in a GROUP BY expression";
     dawgt:approval dawgt:NotClassified ;
-    rdf:type   mf:NegativeSyntaxTest ;
     mf:action  <agg12.rq> .
 
 :agg-groupconcat-01 rdf:type mf:QueryEvaluationTest ;

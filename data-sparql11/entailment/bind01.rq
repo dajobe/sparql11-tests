@@ -5,6 +5,6 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 SELECT ?z
 {
   ?s ?p ?o .
-  ?p a owl:DataProperty . 
+  ?p a owl:DatatypeProperty . 
   BIND(?o+10 AS ?z)
 }

@@ -18,6 +18,7 @@
       :insert-where-02
       :insert-where-03
       :insert-where-04
+      :insert-using-01
     ) .
 
 :insert-data-spo1 rdf:type ut:UpdateEvaluationTest ;
