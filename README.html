@@ -26,7 +26,7 @@ table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
 
 
   </style>
-  <meta name="RCS-Id" content="$Id: README.html,v 1.25 2011/02/01 22:32:22 apollere2 Exp $" />
+  <meta name="RCS-Id" content="$Id: README.html,v 1.28 2011/04/19 22:25:23 apollere2 Exp $" />
 </head>
 <body>
   <div class="head">
@@ -47,7 +47,7 @@ table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
        <dd><a href="mailto:lee@thefigtrees.net">Lee Feigenbaum</a> &ndash;
         Cambridge Semantics</dd>
       <dt>Version:</dt>
-      <dd><code>$Revision: 1.25 $</code></dd>
+      <dd><code>$Revision: 1.28 $</code></dd>
   </dl>
 
     <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> &copy;
@@ -133,8 +133,8 @@ use to generate an implementation report for the SPARQL1.1 Query  and SPARQL1.1 
 </p>
   <h4><a name="vocabularies" id="vocabularies"/>Manifest Vocabularies</a></h4>
 
-  <p>The SPARQL1.1 test manifest files define four vocabularies to express
-  tests:</p>
+  <p>The SPARQL1.1 test manifest files define five vocabularies to express
+  tests and results:</p>
 
   <ol>
     <li><a href="http://www.w3.org/2001/sw/DataAccess/tests/test-manifest.n3">manifest vocabulary</a> (prefixed with
@@ -145,6 +145,8 @@ use to generate an implementation report for the SPARQL1.1 Query  and SPARQL1.1 
     with <tt>ut:</tt> below)</li>
     <li><a href="http://www.w3.org/2001/sw/DataAccess/tests/test-dawg.n3">DAWG test approval vocabulary</a> (prefixed
     with <tt>dawgt:</tt> below)</li>
+    <li><a href="http://www.w3.org/2001/sw/DataAccess/tests/test-dawg.n3">DAWG result-set RDF vocabulary</a> (prefixed
+    with <tt>rs:</tt> below)</li>
   </ol>
   
   <p>All examples below use these prefix bindings (specified in <a
@@ -157,7 +159,7 @@ use to generate an implementation report for the SPARQL1.1 Query  and SPARQL1.1 
 @prefix qt:      &lt;http://www.w3.org/2001/sw/DataAccess/tests/test-query#&gt; .
 @prefix ut:      &lt;http://www.w3.org/2009/sparql/tests/test-update#&gt; .
 @prefix sd:      &lt;http://www.w3.org/ns/sparql-service-description#&gt; .
-  
+@prefix rs:      &lt;http://www.w3.org/2001/sw/DataAccess/tests/result-set#&gt; .  
   </pre>
 
   <h4><a name="structure" id="structure"/>Manifest Structure</a></h4>
@@ -167,12 +169,15 @@ A manifest is a list (RDF Collection) of tests. Every test has
 a name (<tt>mf:name</tt>); many tests also have a comment
 (<tt>rdfs:comment</tt>) explaining the purpose of the test. The <tt>dawgt:approval</tt> predicate relates a test to its official Working Group status (e.g. <tt>dawgt:Approved</tt>). Tests are
 grouped (via their <tt>rdf:type</tt>) as (query- and update-) syntax tests (an <tt>rdf:type</tt> of
-either <tt>mf:PositiveSyntaxTest</tt> or <tt>mf:NegativeSyntaxTest</tt>), 
+either <tt>mf:PositiveSyntaxTest</tt> for positive syntax tests for SPARQL1.0,
+  <tt>mf:PositiveSyntaxTest11</tt> for positive syntax tests for SPARQL1.1 Query,
+  <tt>mf:PositiveUpdateSyntaxTest11</tt> for positive syntax tests for SPARQL1.1 Update,
+  , or <tt>mf:NegativeSyntaxTest</tt> for negative syntax tests for SPARQL1.0,
+  <tt>mf:NegativeSyntaxTest11</tt> for negative syntax tests for SPARQL1.1 Query,
+  <tt>mf:NegativeUpdateSyntaxTest11</tt> for negative syntax tests for SPARQL1.1 Update), 
 query evaluation test (an <tt>rdf:type</tt> of
 <tt>mf:QueryEvaluationTest</tt>), or update evaluation test (an <tt>rdf:type</tt> of
-<tt>ut:UpdateEvaluationTest</tt>).</p>
-
-  <p>@@@ Shouled we rather include the new class for update evaluation tests into mf: than in ut:? @@@</p>
+<tt>mf:UpdateEvaluationTest</tt>).</p>
 
   <h4><a name="filenames" id="filenames"/>File Names</a></h4>
   
@@ -241,7 +246,7 @@ the query string.
     Results XML Format</a>. SELECT or ASK queries.</li>
     <li>The <a href="http://www.w3.org/TR/sparql11-results-json/">SPARQL Query
     Results JSON Format</a>. SELECT or ASK queries.</li>
-    <li>The <a href="http://www.w3.org/2009/sparql/docs/tests/result-set.n3">DAWG result-set RDF vocabulary</a>.
+    <li>The <a href="http://www.w3.org/2001/sw/DataAccess/tests/result-set.n3">DAWG result-set RDF vocabulary</a>.
     SELECT or ASK queries.</li>
     <li><a href="http://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> or <a
     href="http://www.dajobe.org/2004/01/turtle/">Turtle</a>. CONSTRUCT queries.</li>
@@ -252,9 +257,9 @@ produced by evaluating the query against the RDF dataset (and encoding in the
 DAWG result set vocabulary, if necessary) is 
 <a href="http://www.w3.org/TR/rdf-concepts/#section-graph-equality">equivalent</a> [RDF-CONCEPTS] 
 to the graph named in the result (after encoding in the DAWG result set
-vocabulary, if necessary). Equivalence can be tested by 
+vocabulary, if necessary).  Note that, solution order only is considered relevant, if the result is expressed in the test suite in the DAWG result set vocabulary, with explicit <code>rs:index</code> triples; otherwise solution order is considered irrelevant for passing. Equivalence can be tested by 
 checking that the graphs are isomorphic and have identical IRI and 
-literal nodes. Note that testing whether two result sets are isomorphic is simpler than full graph isomorphism. Iterating over rows in one set, finding a match with the other set, removing this pair, then making sure all rows are accounted for, achieves the same effect.</p>
+literal nodes. Note that testing whether two result sets are isomorphic is simpler than full graph isomorphism. Iterating over rows in one set, finding a match with the other set, removing this pair, then making sure all rows are accounted for, achieves the same effect. </p>
 
 <p>Query evaluation tests that involve the <a href="http://www.w3.org/TR/rdf-sparql-query#modReduced">REDUCED</a> keyword have slightly different passing criteria. These tests are indicated in the manifest files with the <tt>mf:resultCardinality</tt> predicate with an object of <tt>mf:LaxCardinality</tt>. To pass such a test, the result set produced by a SPARQL implementation must contain each solution in the expected result set at least once and no more than the number of times that the solution occurs in the expected result set. (That is, the expected result set contains the solutions with cardinalities as they would be if the query did not contain REDUCED; to pass the test, an implementation must produce the correct results with cardinalities between one and the cardinlity in the expected result set.)</p>
 
@@ -326,7 +331,7 @@ to the graphs denoted in the <tt>mf:action</tt> (and <tt>mf:result</tt>) propert
 <p>An example definition of an update evaluation test is:</p>
 
 <pre class="diag">
-:insert-data-spo1 a ut:UpdateEvaluationTest ;
+:insert-data-spo1 a mf:UpdateEvaluationTest ;
     mf:name    "Simple insert data 1" ;
     rdfs:comment "This is a simple insert of a single triple to the unnamed graph of an empty graph store" ;
     dawgt:approval dawgt:NotClassified ;
