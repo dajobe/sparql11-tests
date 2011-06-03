@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="service"/>
+    <variable name="titile"/>
+  </head>
+  <results>
+    <result>
+      <binding name="service"><uri>http://projects2.example.org/SPARQL</uri></binding>
+      <binding name="title"><literal>Query remote RDF Data</literal></binding>
+    </result>
+    <result>
+      <binding name="service"><uri>http://projects2.example.org/SPARQL</uri></binding>
+      <binding name="title"><literal>Querying multiple SPARQL endpoints</literal></binding>
+    </result>
+	<result>
+      <binding name="service"><uri>http://projects3.example.org/SPARQL</uri></binding>
+      <binding name="title"><literal>Update remote RDF Data</literal></binding>
+    </result>
+  </results>
+</sparql>
+
