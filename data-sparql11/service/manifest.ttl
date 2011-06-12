@@ -34,7 +34,7 @@
     dawgt:approval dawgt:Approved ;
     mf:action
          [ qt:query  <service02.rq> ;
-           qt:data   <data02endpoint1.ttl> 
+           qt:data   <data02endpoint1.ttl> ;
 		   qt:data   <data02endpoint2.ttl> ] ;
     mf:result  <service02.srx> .  
     
@@ -43,7 +43,7 @@
     dawgt:approval dawgt:Approved ;
     mf:action
          [ qt:query  <service03.rq> ;
-           qt:data   <data03endpoint1.ttl> 
+           qt:data   <data03endpoint1.ttl> ;
 		   qt:data   <data03endpoint2.ttl> ] ;
     mf:result  <service03.srx> . 
     
@@ -52,7 +52,7 @@
     dawgt:approval dawgt:Approved ;
     mf:action
          [ qt:query  <service04.rq> ;
-           qt:data   <data04.ttl> 
+           qt:data   <data04.ttl> ;
 		   qt:data   <data04endpoint.ttl> ] ;
     mf:result  <service04.srx> .   
   
