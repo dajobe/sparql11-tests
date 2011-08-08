@@ -22,6 +22,7 @@
     :subquery11
     :subquery12
     :subquery13
+    :subquery14
    ) .
 
 
@@ -154,4 +155,13 @@
          [ qt:query  <sq11.rq> ;
            qt:data   <sq11.ttl> ] ;
     mf:result  <sq11.srx>
+    . 
+
+  :subquery14 rdf:type mf:QueryEvaluationTest ;
+    mf:name    "sq14 - limit by resource" ;
+    dawgt:approval dawgt:NotClassified ;
+    mf:action
+         [ qt:query  <sq14.rq> ;
+           qt:data   <sq14.ttl> ] ;
+    mf:result  <sq14-out.ttl>
     . 
