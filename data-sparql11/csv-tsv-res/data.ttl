@@ -5,6 +5,6 @@
 :s2 :p2 "foo" .
 :s3 :p3 "bar"^^xsd:string .
 :s4 :p4 4 .
-:s5 :p5 "5"^^xsd:decimal.
-:s6 :p6 _:o6.
+:s5 :p5 5.5 .
+:s6 :p6 _:o6 .
 
