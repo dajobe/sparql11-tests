@@ -35,6 +35,8 @@
     :agg-max-01
     :agg-max-02
     :agg-sample-01 
+    :agg-err-01
+    :agg-err-02
 ) .
 
 
@@ -284,3 +286,24 @@
     mf:result  <agg-sample-01.srx>
     .
 
+:agg-err-01 rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Error in AVG" ;
+	mf:feature sparql:aggregate ;
+	rdfs:comment "Error in AVG return no binding";
+    dawgt:approval dawgt:NotClassified;
+    mf:action
+         [ qt:query  <agg-err-01.rq> ;
+           qt:data   <agg-err-01.ttl> ] ;
+    mf:result  <agg-err-01.srx>
+    .
+    
+:agg-err-02 rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Protect from error in AVG" ;
+	mf:feature sparql:aggregate ;
+	rdfs:comment "Protect from error in AVG using IF and COALESCE";
+    dawgt:approval dawgt:NotClassified;
+    mf:action
+         [ qt:query  <agg-err-02.rq> ;
+           qt:data   <agg-err-02.ttl> ] ;
+    mf:result  <agg-err-02.srx>
+    .    
