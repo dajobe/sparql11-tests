@@ -18,7 +18,6 @@
 :jsonres01 rdf:type mf:QueryEvaluationTest ;
     mf:name    "jsonres01 - JSON Result Format" ;
     rdfs:comment "SELECT * WHERE { ?S ?P ?O }";
-    dawgt:approval dawgt:NotClassified ;
     dawgt:approval dawgt:Approved ;
     dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2011-08-16#resolution_2>; 
     mf:action

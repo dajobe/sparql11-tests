@@ -16,7 +16,7 @@
 	:dawg-drop-all-01
    ).
 
-:dawg-drop-default-01 a mf:UpdateEvaluationTest ;
+:dawg-drop-default-01 a ut:UpdateEvaluationTest ;
     mf:name    "DROP DEFAULT" ;
     rdfs:comment "This is a DROP of the default graph" ;
     dawgt:approval dawgt:NotClassified ;
@@ -36,7 +36,7 @@
               ] ;
     .
 
-:dawg-drop-graph-01 a mf:UpdateEvaluationTest ;
+:dawg-drop-graph-01 a ut:UpdateEvaluationTest ;
     mf:name    "DROP GRAPH" ;
     rdfs:comment "This is a DROP of an existing named graph" ;
     dawgt:approval dawgt:NotClassified ;
@@ -55,7 +55,7 @@
               ] ;
     .
 
-:dawg-drop-named-01 a mf:UpdateEvaluationTest ;
+:dawg-drop-named-01 a ut:UpdateEvaluationTest ;
     mf:name    "DROP NAMED" ;
     rdfs:comment "This is a DROP of all the named graphs" ;
     dawgt:approval dawgt:NotClassified ;
@@ -72,7 +72,7 @@
               ] ;
     .
 
-:dawg-drop-all-01 a mf:UpdateEvaluationTest ;
+:dawg-drop-all-01 a ut:UpdateEvaluationTest ;
     mf:name    "DROP ALL" ;
     rdfs:comment "This is a DROP of all graphs (default and named)" ;
     dawgt:approval dawgt:NotClassified ;

@@ -6,12 +6,14 @@
 <> a mf:Manifest ;
 	rdfs:label "SPARQL 1.1 tests" ;
 	mf:include (
+		<add/manifest.ttl>
 		<aggregates/manifest.ttl>
 		<basic-update/manifest.ttl>
 		<bind/manifest.ttl>
 		<bindings/manifest.ttl>
 		<clear/manifest.ttl>
 		<construct/manifest.ttl>
+		<copy/manifest.ttl>
 		<csv-tsv-res/manifest.ttl>
 		<delete-data/manifest.ttl>
 		<delete-insert/manifest.ttl>
@@ -19,9 +21,11 @@
 		<delete/manifest.ttl>
 		<drop/manifest.ttl>
 		<entailment/manifest.ttl>
+		<exists/manifest.ttl>
 		<functions/manifest.ttl>
 		<grouping/manifest.ttl>
 		<json-res/manifest.ttl>
+		<move/manifest.ttl>
 		<negation/manifest.ttl>
 		<project-expression/manifest.ttl>
 		<property-path/manifest.ttl>
@@ -30,8 +34,8 @@
 		<syntax-query/manifest.ttl>
 		<syntax-update-1/manifest.ttl>
 		<syntax-update-2/manifest.ttl>
-        <syntax-fed/manifest.ttl>
 		<update-silent/manifest.ttl>
+		<syntax-fed/manifest.ttl>
 	).
 
 
@@ -41,6 +45,7 @@
 		<bind/manifest.ttl>
 		<bindings/manifest.ttl>
 		<construct/manifest.ttl>
+		<exists/manifest.ttl>
 		<functions/manifest.ttl>
 		<grouping/manifest.ttl>
 		<negation/manifest.ttl>
@@ -52,13 +57,16 @@
 
 <http://www.w3.org/TR/sparql11-update/> rdfs:label "SPARQL 1.1 Update" ;
 	mf:conformanceRequirement (
+		<add/manifest.ttl>
 		<basic-update/manifest.ttl>
 		<clear/manifest.ttl>
+		<copy/manifest.ttl>
 		<delete-data/manifest.ttl>
 		<delete-insert/manifest.ttl>
 		<delete-where/manifest.ttl>
 		<delete/manifest.ttl>
 		<drop/manifest.ttl>
+		<move/manifest.ttl>
 		<syntax-update-1/manifest.ttl>
 		<syntax-update-2/manifest.ttl>
 		<update-silent/manifest.ttl>
