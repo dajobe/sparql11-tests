@@ -26,7 +26,7 @@ table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
 
 
   </style>
-  <meta name="RCS-Id" content="$Id: README.html,v 1.31 2011/08/07 19:35:16 apollere2 Exp $" />
+  <meta name="RCS-Id" content="$Id: README.html,v 1.32 2012/04/10 16:03:07 gwilliam Exp $" />
 </head>
 <body>
   <div class="head">
@@ -47,7 +47,7 @@ table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
        <dd><a href="mailto:lee@thefigtrees.net">Lee Feigenbaum</a> &ndash;
         Cambridge Semantics</dd>
       <dt>Version:</dt>
-      <dd><code>$Revision: 1.31 $</code></dd>
+      <dd><code>$Revision: 1.32 $</code></dd>
   </dl>
 
     <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> &copy;
@@ -168,17 +168,23 @@ use to generate an implementation report for the SPARQL1.1 Query  and SPARQL1.1 
   <p>
 A manifest is a list (RDF Collection) of tests. Every test has 
 a name (<tt>mf:name</tt>); many tests also have a comment
-(<tt>rdfs:comment</tt>) explaining the purpose of the test. The <tt>dawgt:approval</tt> predicate relates a test to its official Working Group status (e.g. <tt>dawgt:Approved</tt>). Tests are
-grouped (via their <tt>rdf:type</tt>) as (query- and update-) syntax tests (an <tt>rdf:type</tt> of
-either <tt>mf:PositiveSyntaxTest</tt> for positive syntax tests for SPARQL1.0,
-  <tt>mf:PositiveSyntaxTest11</tt> for positive syntax tests for SPARQL1.1 Query,
-  <tt>mf:PositiveUpdateSyntaxTest11</tt> for positive syntax tests for SPARQL1.1 Update,
-  , or <tt>mf:NegativeSyntaxTest</tt> for negative syntax tests for SPARQL1.0,
-  <tt>mf:NegativeSyntaxTest11</tt> for negative syntax tests for SPARQL1.1 Query,
-  <tt>mf:NegativeUpdateSyntaxTest11</tt> for negative syntax tests for SPARQL1.1 Update), 
-query evaluation test (an <tt>rdf:type</tt> of
-<tt>mf:QueryEvaluationTest</tt>), or update evaluation test (an <tt>rdf:type</tt> of
-<tt>mf:UpdateEvaluationTest</tt>).</p>
+(<tt>rdfs:comment</tt>) explaining the purpose of the test.
+The <tt>dawgt:approval</tt> predicate relates a test to its official
+Working Group status (e.g. <tt>dawgt:Approved</tt>).
+Tests are grouped (via their <tt>rdf:type</tt>) as:
+</p>
+
+<ul>
+	<li>positive SPARQL 1.0 Query syntax tests (<tt>mf:PositiveSyntaxTest</tt>)</li>
+	<li>positive SPARQL 1.1 Query syntax tests (<tt>mf:PositiveSyntaxTest11</tt>)</li>
+	<li>positive SPARQL 1.1 Update syntax tests (<tt>mf:PositiveUpdateSyntaxTest11</tt>)</li>
+	<li>negative SPARQL 1.0 Query syntax tests (<tt>mf:NegativeSyntaxTest</tt>)</li>
+	<li>negative SPARQL 1.1 Query syntax tests (<tt>mf:NegativeSyntaxTest11</tt>)</li>
+	<li>negative SPARQL 1.1 Update syntax tests (<tt>mf:NegativeUpdateSyntaxTest11</tt>)</li>
+	<li>SPARQL 1.0 and 1.1 Query evaluation tests (<tt>mf:QueryEvaluationTest</tt>)</li>
+	<li>SPARQL 1.1 Update evaluation tests (<tt>mf:UpdateEvaluationTest</tt>)</li>
+	<li>CSV Result Format tests (<tt>mf:CSVResultFormatTest</tt>)</li>
+</ul>
 
   <h4><a name="filenames" id="filenames"/>File Names</a></h4>
   
@@ -283,6 +289,51 @@ literal nodes. Note that testing whether two result sets are isomorphic is simpl
       mf:result  &lt;regex-result-002.n3&gt; .
 </pre>
 
+  <h4><a name="csvtests" id="csvtests"/>CSV Result Format Tests</a></h4>
+
+  <p>
+CSV Result Format tests are meant to test a SPARQL implementation's ability to serialize query results in the SPARQL 1.1 Query Results CSV Format.
+This is a lossy format, however, and so cannot be tested in the same manner as the other result formats.
+Care should be taken to ensure that results produced in the CSV format are compared properly to the expected result values.
+In all other respects, CSV tests should be treated as <a href="#queryevaltests">query evaluation tests</a>.
+  </p>
+
+<p>An example result set in the CSV Format is:</p>
+<pre class="diag">
+s,p,o
+http://example.org/s2,http://example.org/p2,2.2
+</pre>
+
+<p>Due to the lossy nature of the CSV format, the single expected result could match any of the following actual results:</p>
+
+<ul>
+	<table class="plain">
+	<tr>
+		<th>s</th>
+		<th>p</th>
+		<th>o</th>
+	</tr>
+	<tr>
+		<td>&lt;http://example.org/s2&gt;</td>
+		<td>&lt;http://example.org/p2&gt;</td>
+		<td>"2.2"</td>
+	</tr>
+	<tr>
+		<td>&lt;http://example.org/s2&gt;</td>
+		<td>&lt;http://example.org/p2&gt;</td>
+		<td>"2.2"^^xsd:string</td>
+	</tr>
+	<tr>
+		<td>&lt;http://example.org/s2&gt;</td>
+		<td>&lt;http://example.org/p2&gt;</td>
+		<td>"2.2"^^xsd:decimal</td>
+	</tr>
+	</table>
+</ul>
+
+
+
+
   <h4><a name="entailevaltests" id="entailevaltests"/>Entailment Evaluation Tests</a></h4>
 
 <p>Entailment Evaluation tests are special query evaluation tests that additionally (slightly ab-)use the <tt>sd:entailmentRegime</tt> property from the <a href="http://www.w3.org/TR/sparql11-service-description/">SPARQL 1.1 Service Description<a> vocabulary to further specify the  object of the <tt>mf:action</tt> property, indicating the expected entailment regime for graphs in the dataset.</p>
@@ -353,7 +404,7 @@ to the graphs denoted in the <tt>mf:action</tt> (and <tt>mf:result</tt>) propert
 
 <p>In SPARQL 1.1 Federated Query, tests cases contain new vocabulary not used before. These tests check whether the queries with that operator are correct or not. Queries using the <code>SERVICE</code> keyword for accessing remote SPARQL endpoints need a way to describe the data comming from these endpoints which was not previously defined.</p>
 
-<p>The predicate <code>sd:serviceData</code> helps to describe the data comming from these remote SPARQL endpoints in a query. This predicate can also contain the predicate <code>sd:endpoint</code> which contains the URL of the remote SPARQL endpoint.</p>
+<p>The predicate <code>qt:serviceData</code> helps to describe the data comming from these remote SPARQL endpoints in a query. This predicate can also contain the predicate <code>qt:endpoint</code> which contains the URL of the remote SPARQL endpoint.</p>
 
 <p>An example definition of a Federated Query test is:</p>
 
@@ -361,16 +412,16 @@ to the graphs denoted in the <tt>mf:action</tt> (and <tt>mf:result</tt>) propert
 :service1 rdf:type mf:QueryEvaluationTest ;
        mf:name    "SERVICE test 1" ;
        dawgt:approval dawgt:NotClassified ;
-       mf:requires mf:BasicFederation ;
+       mf:feature sd:BasicFederatedQuery ;
        mf:action [
-               qt:query  <service01.rq> ;
-               qt:data   <data01.ttl> ;
+               qt:query  &lt;service01.rq&gt; ;
+               qt:data   &lt;data01.ttl&gt; ;
                qt:serviceData [
-                       qt:endpoint <http://example.org/sparql> ;
-                       qt:data     <data01endpoint.ttl>
+                       qt:endpoint &lt;http://example.org/sparql&gt; ;
+                       qt:data     &lt;data01endpoint.ttl&gt;
                ]
        ] ;
-       mf:result  <service01.srx> .</pre>
+       mf:result  &lt;service01.srx&gt; .</pre>
 
 
 
