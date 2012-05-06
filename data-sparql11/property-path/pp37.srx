@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
   <head>
-    <variable name="z"/>
+    <variable name="X"/>
   </head>
   <results>
     <result>
-      <binding name="z">
-        <uri>http://example/b</uri>
+      <binding name="X">
+        <uri>http://example.org/A0</uri>
       </binding>
     </result>
     <result>
-      <binding name="z">
-        <uri>http://example/c</uri>
+      <binding name="X">
+        <uri>http://example.org/A1</uri>
       </binding>
     </result>
     <result>
-      <binding name="z">
-        <uri>http://example/z</uri>
+      <binding name="X">
+        <uri>http://example.org/A2</uri>
       </binding>
     </result>
   </results>

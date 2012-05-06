@@ -24,9 +24,15 @@ table, td, th	{ border-style: solid;
 table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
                   /* cellpadding="0" cellspacing="1" style="border-collapse: collapse" */
 
+p.note {
+	border: 2px solid #f00;
+	width: 76%;
+	margin: 0 7%;
+	padding: 1em;
+}
 
   </style>
-  <meta name="RCS-Id" content="$Id: README.html,v 1.32 2012/04/10 16:03:07 gwilliam Exp $" />
+  <meta name="RCS-Id" content="$Id: README.html,v 1.33 2012/04/30 16:02:50 gwilliam Exp $" />
 </head>
 <body>
   <div class="head">
@@ -47,7 +53,7 @@ table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
        <dd><a href="mailto:lee@thefigtrees.net">Lee Feigenbaum</a> &ndash;
         Cambridge Semantics</dd>
       <dt>Version:</dt>
-      <dd><code>$Revision: 1.32 $</code></dd>
+      <dd><code>$Revision: 1.33 $</code></dd>
   </dl>
 
     <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> &copy;
@@ -82,6 +88,7 @@ table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
    <a href="#filenames"/>File Names</a><br/>
    <a href="#syntaxtests"/>Syntax Tests</a><br/>
    <a href="#queryevaltests"/>Query Evaluation Tests</a><br/>
+   <a href="#csvtests"/>CSV Result Format Tests</a><br/>
    <a href="#entailevaltests"/>Entailment Evaluation Tests</a><br/>
    <a href="#updateevaltests"/>Update Evaluation Tests</a><br/>
    <a href="#servicetests"/>Federated Query Tests</a><br/>
@@ -90,6 +97,15 @@ table.plain	{ border-spacing: 0px; padding: 0px ; border-collapse: collapse ; }
   </p>
 </div>
   <hr />
+
+
+<p class="note">
+This document is a work in progress. As the SPARQL working group finalizes work
+on the SPARQL 1.1 standards, the test suite and its description below will be
+updated to reflect the standards. However, the current tests and descriptions
+may be incomplete with respect to the current state of the standards.
+</p>
+
 <p>
 The
 <a href="http://www.w3.org/2009/sparql/wiki/">SPARQL Working Group</a> uses a test-driven process.&nbsp; The <a href="http://www.w3.org/2009/sparql/docs/tests">test area</a> is a 
