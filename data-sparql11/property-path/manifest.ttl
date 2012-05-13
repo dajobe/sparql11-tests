@@ -384,7 +384,7 @@
     .
 
 :pp36  rdf:type mf:QueryEvaluationTest ;
-    dawgt:approval dawgt:Unclassified ;
+    dawgt:approval dawgt:NotClassified ;
     mf:name    "(pp36) Arbitrary path with bound endpoints" ;
     mf:action
         [ qt:query  <pp36.rq> ;

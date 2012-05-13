@@ -14,7 +14,6 @@
     :copy02
     :copy03
     :copy04
-    :copy05
     :copy06
     :copy07
     ) .
@@ -77,20 +76,6 @@
                                rdfs:label "http://example.org/g1" ] ;
                 ut:graphData [ ut:graph <copy-01.ttl> ;
                                rdfs:label "http://example.org/g2" ]
-              ] .
-
-:copy05 rdf:type mf:UpdateEvaluationTest ;
-    mf:name "COPY 5" ;
-    rdfs:comment "Copy a non-existing graph to an existing graph" ;
-    dawgt:approval dawgt:NotClassified ;
-    mf:action [ ut:request <copy-05.ru> ;
-                ut:data <copy-default.ttl> ;
-                ut:graphData [ ut:graph <copy-01.ttl> ;
-                               rdfs:label "http://example.org/g1" ]
-              ] ;
-    mf:result [ ut:data <copy-default.ttl> ;
-                ut:graphData [ ut:graph <copy-01.ttl> ;
-                               rdfs:label "http://example.org/g1" ]
               ] .
 
 :copy06 rdf:type mf:UpdateEvaluationTest ;

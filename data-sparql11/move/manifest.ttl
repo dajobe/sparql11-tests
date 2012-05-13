@@ -14,7 +14,6 @@
     :move02
     :move03
     :move04
-    :move05
     :move06
     :move07
     ) .
@@ -71,20 +70,6 @@
     mf:result [ ut:data <move-default.ttl> ;
                 ut:graphData [ ut:graph <move-01.ttl> ;
                                rdfs:label "http://example.org/g2" ]
-              ] .
-
-:move05 rdf:type mf:UpdateEvaluationTest ;
-    mf:name "MOVE 5" ;
-    rdfs:comment "Move a non-existing graph to an existing graph" ;
-    dawgt:approval dawgt:NotClassified ;
-    mf:action [ ut:request <move-05.ru> ;
-                ut:data <move-default.ttl> ;
-                ut:graphData [ ut:graph <move-01.ttl> ;
-                               rdfs:label "http://example.org/g1" ]
-              ] ;
-    mf:result [ ut:data <move-default.ttl> ;
-                ut:graphData [ ut:graph <move-01.ttl> ;
-                               rdfs:label "http://example.org/g1" ]
               ] .
 
 :move06 rdf:type mf:UpdateEvaluationTest ;
