@@ -37,6 +37,7 @@
 		<update-silent/manifest.ttl>
 		<syntax-fed/manifest.ttl>
 		<service-description/manifest.ttl>
+		<protocol/manifest.ttl>
 	).
 
 
@@ -97,4 +98,9 @@
 <http://www.w3.org/TR/sparql11-service-description/> rdfs:label "SPARQL 1.1 Service Description" ;
 	mf:conformanceRequirement (
 		<service-description/manifest.ttl>
+	).
+
+<http://www.w3.org/TR/sparql11-protocol/> rdfs:label "SPARQL 1.1 Protocol" ;
+	mf:conformanceRequirement (
+		<protocol/manifest.ttl>
 	).

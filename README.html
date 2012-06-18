@@ -32,7 +32,7 @@ p.note {
 }
 
   </style>
-  <meta name="RCS-Id" content="$Id: README.html,v 1.33 2012/04/30 16:02:50 gwilliam Exp $" />
+  <meta name="RCS-Id" content="$Id: README.html,v 1.34 2012/05/21 13:08:52 gwilliam Exp $" />
 </head>
 <body>
   <div class="head">
@@ -53,7 +53,7 @@ p.note {
        <dd><a href="mailto:lee@thefigtrees.net">Lee Feigenbaum</a> &ndash;
         Cambridge Semantics</dd>
       <dt>Version:</dt>
-      <dd><code>$Revision: 1.33 $</code></dd>
+      <dd><code>$Revision: 1.34 $</code></dd>
   </dl>
 
     <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> &copy;
@@ -92,6 +92,7 @@ p.note {
    <a href="#entailevaltests"/>Entailment Evaluation Tests</a><br/>
    <a href="#updateevaltests"/>Update Evaluation Tests</a><br/>
    <a href="#servicetests"/>Federated Query Tests</a><br/>
+   <a href="#servicedescriptiontests"/>Service Description Tests</a><br/>
    <a href="#testannotations"/>Test annotations</a><br/>
    <a href="#howto"/>How to run the Test Cases</a><br/>
   </p>
@@ -131,6 +132,10 @@ href="data-sparql11/entailment/manifest.ttl">manifest of entailment evaluation t
   <li><a href="http://www.w3.org/2009/sparql/docs/tests/data-sparql11/manifest-sparql11-update-syntax.ttl">manifest of syntax-only tests</a> (positive and negative tests) for the <a href="http://www.w3.org/TR/sparql11-update/">SPARQL1.1 Update Language</a></li>
   <li><a
 href="http://www.w3.org/2009/sparql/docs/tests/data-sparql11/manifest-sparql11-update-syntax.ttl">manifest of update evaluation tests</a> for the <a href="http://www.w3.org/TR/sparql11-update/">SPARQL1.1 Update Language</a></li>
+  <li><a
+href="data-sparql11/service-description/manifest.ttl">manifest of service description tests</a> for the <a href="http://www.w3.org/TR/sparql11-service-description/">SPARQL1.1 Service Description</a></li>
+
+
 </ul>
 
 <h4><a name="organization" id="organization"/>Organization</a></h4>
@@ -200,6 +205,7 @@ Tests are grouped (via their <tt>rdf:type</tt>) as:
 	<li>SPARQL 1.0 and 1.1 Query evaluation tests (<tt>mf:QueryEvaluationTest</tt>)</li>
 	<li>SPARQL 1.1 Update evaluation tests (<tt>mf:UpdateEvaluationTest</tt>)</li>
 	<li>CSV Result Format tests (<tt>mf:CSVResultFormatTest</tt>)</li>
+	<li>SPARQL 1.1 Service Description tests (<tt>mf:ServiceDescriptionTest</tt>)</li>
 </ul>
 
   <h4><a name="filenames" id="filenames"/>File Names</a></h4>
@@ -440,6 +446,9 @@ to the graphs denoted in the <tt>mf:action</tt> (and <tt>mf:result</tt>) propert
        mf:result  &lt;service01.srx&gt; .</pre>
 
 
+<h4><a name="servicedescriptiontests" id="servicedescriptiontests"/>Service Description Tests</a></h4>
+
+<p>A testing service for SPARQL 1.1 Protocol implementations supporting <a href="http://www.w3.org/TR/sparql11-service-description/">SPARQL 1.1 Service Descriptions</a> has been set up at <tt><a href="http://www.w3.org/2009/sparql/sdvalidator">http://www.w3.org/2009/sparql/sdvalidator</a></tt>. The service performs a number of tests to verify that a submitted endpoint returns RDF that conforms to the service description vocabulary specification. Using content negotiation to request RDF (supporting both Turtle and RDF/XML), the service can be used to generate an <a href="http://www.w3.org/2001/sw/DataAccess/tests/earl">EARL implementation report</a>.</p>
 
   <h4><a name="testannotations" id="testannotations"/>Test annotations</a></h4>
 

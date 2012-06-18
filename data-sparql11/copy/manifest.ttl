@@ -21,7 +21,8 @@
 :copy01 rdf:type mf:UpdateEvaluationTest ;
     mf:name "COPY 1" ;
     rdfs:comment "Copy the default graph to an existing graph" ;
-    dawgt:approval dawgt:NotClassified ;
+    dawgt:approval dawgt:Approved ;
+    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-05-22#resolution_2> ;
     mf:action [ ut:request <copy-01.ru> ;
                 ut:data <copy-default.ttl> ;
                 ut:graphData [ ut:graph <copy-01.ttl> ;
@@ -35,7 +36,8 @@
 :copy02 rdf:type mf:UpdateEvaluationTest ;
     mf:name "COPY 2" ;
     rdfs:comment "Copy the default graph to a non-existing graph" ;
-    dawgt:approval dawgt:NotClassified ;
+    dawgt:approval dawgt:Approved ;
+    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-05-22#resolution_2> ;
     mf:action [ ut:request <copy-01.ru> ;
                 ut:data <copy-default.ttl> ;
               ] ;
@@ -47,7 +49,8 @@
 :copy03 rdf:type mf:UpdateEvaluationTest ;
     mf:name "COPY 3" ;
     rdfs:comment "Copy a named graph to an existing graph" ;
-    dawgt:approval dawgt:NotClassified ;
+    dawgt:approval dawgt:Approved ;
+    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-05-22#resolution_2> ;
     mf:action [ ut:request <copy-03.ru> ;
                 ut:data <copy-default.ttl> ;
                 ut:graphData [ ut:graph <copy-01.ttl> ;
@@ -65,7 +68,8 @@
 :copy04 rdf:type mf:UpdateEvaluationTest ;
     mf:name "COPY 4" ;
     rdfs:comment "Copy a named graph to a non-existing graph" ;
-    dawgt:approval dawgt:NotClassified ;
+    dawgt:approval dawgt:Approved ;
+    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-05-22#resolution_2> ;
     mf:action [ ut:request <copy-03.ru> ;
                 ut:data <copy-default.ttl> ;
                 ut:graphData [ ut:graph <copy-01.ttl> ;
@@ -81,7 +85,8 @@
 :copy06 rdf:type mf:UpdateEvaluationTest ;
     mf:name "COPY 6" ;
     rdfs:comment "Copy an existing graph to the default graph" ;
-    dawgt:approval dawgt:NotClassified ;
+    dawgt:approval dawgt:Approved ;
+    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-05-22#resolution_2> ;
     mf:action [ ut:request <copy-06.ru> ;
                 ut:data <copy-default.ttl> ;
                 ut:graphData [ ut:graph <copy-01.ttl> ;
@@ -95,7 +100,8 @@
 :copy07 rdf:type mf:UpdateEvaluationTest ;
     mf:name "COPY 7" ;
     rdfs:comment "Copy a graph to itself" ;
-    dawgt:approval dawgt:NotClassified ;
+    dawgt:approval dawgt:Approved ;
+    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-05-22#resolution_2> ;
     mf:action [ ut:request <copy-07.ru> ;
                 ut:data <copy-default.ttl> ;
                 ut:graphData [ ut:graph <copy-01.ttl> ;
