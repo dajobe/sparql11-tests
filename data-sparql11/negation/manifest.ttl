@@ -19,6 +19,8 @@
     :subset-03
     :exists-01
     :exists-02
+    :full-minuend
+    :partial-minuend
    ) .
 
 
@@ -111,4 +113,20 @@
          [ qt:query  <exists-02.rq> ;
            qt:data   <set-data.ttl> ] ;
     mf:result  <exists-02.srx> .
+
+:full-minuend rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Subtraction with MINUS from a fully bound minuend" ;
+    dawgt:approval dawgt:Approved ;
+    mf:action
+         [ qt:query  <full-minuend.rq> ;
+           qt:data   <full-minuend.ttl> ] ;
+    mf:result  <full-minuend.srx> .
+
+:partial-minuend rdf:type mf:QueryEvaluationTest ;
+    mf:name    "Subtraction with MINUS from a partially bound minuend" ;
+    dawgt:approval dawgt:Approved ;
+    mf:action
+         [ qt:query  <part-minuend.rq> ;
+           qt:data   <part-minuend.ttl> ] ;
+    mf:result  <part-minuend.srx> .
 

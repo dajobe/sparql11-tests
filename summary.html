@@ -56,6 +56,8 @@
 	<li><a href="#agg10">aggregates/manifest#agg10</a> - COUNT 10</li>
 	<li><a href="#agg11">aggregates/manifest#agg11</a> - COUNT 11</li>
 	<li><a href="#agg12">aggregates/manifest#agg12</a> - COUNT 12</li>
+	<li><a href="#insert-05">basic-update/manifest#insert-05</a> - INSERT same bnode twice</li>
+	<li><a href="#insert-05a">basic-update/manifest#insert-05a</a> - INSERT same bnode twice</li>
 	<li><a href="#insert-data-spo-named1">basic-update/manifest#insert-data-spo-named1</a> - Simple insert data named 1</li>
 	<li><a href="#insert-data-spo-named2">basic-update/manifest#insert-data-spo-named2</a> - Simple insert data named 2</li>
 	<li><a href="#insert-data-spo-named3">basic-update/manifest#insert-data-spo-named3</a> - Simple insert data named 3</li>
@@ -75,14 +77,14 @@
 	<li><a href="#bind08">bind/manifest#bind08</a> - bind08 - BIND</li>
 	<li><a href="#bind10">bind/manifest#bind10</a> - bind10 - BIND scoping - Variable in filter not in scope</li>
 	<li><a href="#bind11">bind/manifest#bind11</a> - bind11 - BIND scoping - Variable in filter in scope</li>
-	<li><a href="#b1">bindings/manifest#b1</a></li>
-	<li><a href="#b2">bindings/manifest#b2</a></li>
-	<li><a href="#b3">bindings/manifest#b3</a></li>
-	<li><a href="#b4">bindings/manifest#b4</a></li>
-	<li><a href="#b5">bindings/manifest#b5</a></li>
-	<li><a href="#b6">bindings/manifest#b6</a></li>
-	<li><a href="#b7">bindings/manifest#b7</a></li>
-	<li><a href="#b8">bindings/manifest#b8</a></li>
+	<li><a href="#b1">bindings/manifest#b1</a> - BINDINGS with subj-var, 1 row</li>
+	<li><a href="#b2">bindings/manifest#b2</a> - BINDINGS with obj-var, 1 row</li>
+	<li><a href="#b3">bindings/manifest#b3</a> - BINDINGS with 2 obj-vars, 1 row</li>
+	<li><a href="#b4">bindings/manifest#b4</a> - BINDINGS with 2 obj-vars, 1 row with UNDEF</li>
+	<li><a href="#b5">bindings/manifest#b5</a> - BINDINGS with 2 obj-vars, 2 rows with UNDEF</li>
+	<li><a href="#b6">bindings/manifest#b6</a> - BINDINGS with pred-var, 1 row</li>
+	<li><a href="#b7">bindings/manifest#b7</a> - BINDINGS with (OPTIONAL) obj-var, 1 row</li>
+	<li><a href="#b8">bindings/manifest#b8</a> - BINDINGS with subj/obj-vars, 2 rows with UNDEF</li>
 	<li><a href="#dawg-clear-all-01">clear/manifest#dawg-clear-all-01</a> - CLEAR ALL</li>
 	<li><a href="#dawg-clear-default-01">clear/manifest#dawg-clear-default-01</a> - CLEAR DEFAULT</li>
 	<li><a href="#dawg-clear-graph-01">clear/manifest#dawg-clear-graph-01</a> - CLEAR GRAPH</li>
@@ -233,8 +235,10 @@
 	<li><a href="#sha512-01">functions/manifest#sha512-01</a> - SHA512()</li>
 	<li><a href="#sha512-02">functions/manifest#sha512-02</a> - SHA512() on Unicode data</li>
 	<li><a href="#starts01">functions/manifest#starts01</a> - STRSTARTS()</li>
-	<li><a href="#strafter01">functions/manifest#strafter01</a> - STRAFTER()</li>
-	<li><a href="#strbefore01">functions/manifest#strbefore01</a> - STRBEFORE()</li>
+	<li><a href="#strafter01a">functions/manifest#strafter01a</a> - STRAFTER()</li>
+	<li><a href="#strafter02">functions/manifest#strafter02</a> - STRAFTER() datatyping</li>
+	<li><a href="#strbefore01a">functions/manifest#strbefore01a</a> - STRBEFORE()</li>
+	<li><a href="#strbefore02">functions/manifest#strbefore02</a> - STRBEFORE() datatyping</li>
 	<li><a href="#strdt01">functions/manifest#strdt01</a> - STRDT()</li>
 	<li><a href="#strdt02">functions/manifest#strdt02</a> - STRDT(STR())</li>
 	<li><a href="#strdt03">functions/manifest#strdt03</a> - STRDT() TypeErrors</li>
@@ -305,6 +309,25 @@
 	<li><a href="#pp35">property-path/manifest#pp35</a> - (pp35) Named Graph 2</li>
 	<li><a href="#pp36">property-path/manifest#pp36</a> - (pp36) Arbitrary path with bound endpoints</li>
 	<li><a href="#pp37">property-path/manifest#pp37</a> - (pp37) Nested (*)*</li>
+	<li><a href="#bad-multiple-queries">protocol/manifest#bad-multiple-queries</a> - invoke query operation with more than one query string</li>
+	<li><a href="#bad-query-method">protocol/manifest#bad-query-method</a> - invoke query operation with a method other than GET or POST</li>
+	<li><a href="#bad-query-missing-direct-type">protocol/manifest#bad-query-missing-direct-type</a> - invoke query operation with SPARQL body, but without application/sparql-query media type</li>
+	<li><a href="#bad-query-missing-form-type">protocol/manifest#bad-query-missing-form-type</a> - invoke query operation with url-encoded body, but without application/x-www-url-form-urlencoded media type</li>
+	<li><a href="#bad-query-non-utf8">protocol/manifest#bad-query-non-utf8</a> - invoke query operation with direct POST, but with a non-UTF8 encoding (UTF-16)</li>
+	<li><a href="#bad-query-syntax">protocol/manifest#bad-query-syntax</a> - invoke query operation with invalid query syntax (4XX result)</li>
+	<li><a href="#bad-query-wrong-media-type">protocol/manifest#bad-query-wrong-media-type</a> - invoke query operation with a POST with media type that's not url-encoded or application/sparql-query</li>
+	<li><a href="#query-content-type-ask">protocol/manifest#query-content-type-ask</a> - query appropriate content type (expect one of: XML, JSON)</li>
+	<li><a href="#query-content-type-construct">protocol/manifest#query-content-type-construct</a> - query appropriate content type (expect one of: RDF/XML, Turtle, N-Triples, RDFa)</li>
+	<li><a href="#query-content-type-describe">protocol/manifest#query-content-type-describe</a> - query appropriate content type (expect one of: RDF/XML, Turtle, N-Triples, RDFa)</li>
+	<li><a href="#query-content-type-select">protocol/manifest#query-content-type-select</a> - query appropriate content type (expect one of: XML, JSON, CSV, TSV)</li>
+	<li><a href="#query-dataset-default-graph">protocol/manifest#query-dataset-default-graph</a> - query with protocol-specified default graph</li>
+	<li><a href="#query-dataset-default-graphs">protocol/manifest#query-dataset-default-graphs</a> - query with protocol-specified default graphs</li>
+	<li><a href="#query-dataset-full">protocol/manifest#query-dataset-full</a> - query with protocol-specified dataset (both named and default graphs)</li>
+	<li><a href="#query-dataset-named-graphs">protocol/manifest#query-dataset-named-graphs</a> - query with protocol-specified named graphs</li>
+	<li><a href="#query-get">protocol/manifest#query-get</a> - query via GET</li>
+	<li><a href="#query-multiple-dataset">protocol/manifest#query-multiple-dataset</a> - query specifying dataset in both query string and protocol; test for use of protocol-specified dataset</li>
+	<li><a href="#query-post-direct">protocol/manifest#query-post-direct</a> - query via POST directly</li>
+	<li><a href="#query-post-form">protocol/manifest#query-post-form</a> - query via URL-encoded POST</li>
 	<li><a href="#conforms-to-schema">service-description/manifest#conforms-to-schema</a> - Service description conforms to schema</li>
 	<li><a href="#has-endpoint-triple">service-description/manifest#has-endpoint-triple</a> - Service description contains a matching sd:endpoint triple</li>
 	<li><a href="#returns-rdf">service-description/manifest#returns-rdf</a> - GET on endpoint returns RDF</li>
@@ -364,7 +387,6 @@
 	<li><a href="#test_36">syntax-query/manifest#test_36</a> - syntax-bindings-03.rq</li>
 	<li><a href="#test_37">syntax-query/manifest#test_37</a> - syntax-bindings-04.rq</li>
 	<li><a href="#test_38">syntax-query/manifest#test_38</a> - syntax-bindings-05.rq</li>
-	<li><a href="#test_39">syntax-query/manifest#test_39</a> - syntax-bindings-01.rq</li>
 	<li><a href="#test_4">syntax-query/manifest#test_4</a> - syntax-select-expr-04.rq</li>
 	<li><a href="#test_40">syntax-query/manifest#test_40</a> - syntax-bind-02.rq</li>
 	<li><a href="#test_41">syntax-query/manifest#test_41</a> - syntax-construct-where-01.rq</li>
@@ -379,9 +401,21 @@
 	<li><a href="#test_5">syntax-query/manifest#test_5</a> - syntax-select-expr-05.rq</li>
 	<li><a href="#test_50">syntax-query/manifest#test_50</a> - syn-bad-08.rq</li>
 	<li><a href="#test_51">syntax-query/manifest#test_51</a> - syntax-bindings-09.rq</li>
-	<li><a href="#test_52">syntax-query/manifest#test_52</a> - PrefixName with backslash-escaped colons</li>
 	<li><a href="#test_53">syntax-query/manifest#test_53</a> - PrefixName with hex-encoded colons</li>
+	<li><a href="#test_54">syntax-query/manifest#test_54</a> - PrefixName with unescaped colons</li>
+	<li><a href="#test_55">syntax-query/manifest#test_55</a> - syntax-BINDscope1.rq</li>
+	<li><a href="#test_56">syntax-query/manifest#test_56</a> - syntax-BINDscope2.rq</li>
+	<li><a href="#test_57">syntax-query/manifest#test_57</a> - syntax-BINDscope3.rq</li>
+	<li><a href="#test_58">syntax-query/manifest#test_58</a> - syntax-BINDscope4.rq</li>
+	<li><a href="#test_59">syntax-query/manifest#test_59</a> - syntax-BINDscope5.rq</li>
 	<li><a href="#test_6">syntax-query/manifest#test_6</a> - syntax-aggregate-01.rq</li>
+	<li><a href="#test_60">syntax-query/manifest#test_60</a> - syntax-BINDscope6.rq</li>
+	<li><a href="#test_61">syntax-query/manifest#test_61</a> - syntax-BINDscope7.rq</li>
+	<li><a href="#test_62">syntax-query/manifest#test_62</a> - syntax-BINDscope8.rq</li>
+	<li><a href="#test_63">syntax-query/manifest#test_63</a> - syntax-propertyPaths-01.rq</li>
+	<li><a href="#test_64">syntax-query/manifest#test_64</a> - syntax-SELECTscope1.rq</li>
+	<li><a href="#test_65">syntax-query/manifest#test_65</a> - syntax-SELECTscope2</li>
+	<li><a href="#test_66">syntax-query/manifest#test_66</a> - syntax-SELECTscope3.rq</li>
 	<li><a href="#test_7">syntax-query/manifest#test_7</a> - syntax-aggregate-02.rq</li>
 	<li><a href="#test_8">syntax-query/manifest#test_8</a> - syntax-aggregate-03.rq</li>
 	<li><a href="#test_9">syntax-query/manifest#test_9</a> - syntax-aggregate-04.rq</li>
@@ -433,6 +467,7 @@
 	<li><a href="#test_50">syntax-update-1/manifest#test_50</a> - syntax-update-bad-10.ru</li>
 	<li><a href="#test_51">syntax-update-1/manifest#test_51</a> - syntax-update-bad-11.ru</li>
 	<li><a href="#test_52">syntax-update-1/manifest#test_52</a> - syntax-update-bad-12.ru</li>
+	<li><a href="#test_53">syntax-update-1/manifest#test_53</a> - syntax-update-53.ru</li>
 	<li><a href="#test_6">syntax-update-1/manifest#test_6</a> - syntax-update-06.ru</li>
 	<li><a href="#test_7">syntax-update-1/manifest#test_7</a> - syntax-update-07.ru</li>
 	<li><a href="#test_8">syntax-update-1/manifest#test_8</a> - syntax-update-08.ru</li>
@@ -643,14 +678,14 @@ Update evaluation test
 :william foaf:givenName &quot;William&quot; .
 :william foaf:mbox  &lt;mailto:bill@example.org&gt; .</div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
 
 :john a foaf:Person .
 :john foaf:givenName &quot;John&quot; .
 :john foaf:mbox  &lt;mailto:johnny@example.org&gt; .</div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
 
@@ -674,13 +709,6 @@ Update evaluation test
 :william foaf:givenName &quot;William&quot; .
 :william foaf:mbox  &lt;mailto:bill@example.org&gt; .</div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix :      &lt;http://example.org/&gt; .
-
-:john foaf:givenName &quot;John&quot; .
-:john foaf:mbox  &lt;mailto:johnny@example.org&gt; .
-:john foaf:knows :sue .</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
@@ -688,6 +716,13 @@ Update evaluation test
 :john a foaf:Person .
 :john foaf:givenName &quot;John&quot; .
 :john foaf:mbox  &lt;mailto:johnny@example.org&gt; .</div>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix :      &lt;http://example.org/&gt; .
+
+:john foaf:givenName &quot;John&quot; .
+:john foaf:mbox  &lt;mailto:johnny@example.org&gt; .
+:john foaf:knows :sue .</div>
 </div>
 <h3>Update</h3>
 <a href="data-sparql11/add/add-05.ru">add/add-05.ru</a><br/>
@@ -703,13 +738,6 @@ Update evaluation test
 :william foaf:givenName &quot;William&quot; .
 :william foaf:mbox  &lt;mailto:bill@example.org&gt; .</div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g1">http://example.org/g1</a></p>
-<div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix :      &lt;http://example.org/&gt; .
-
-:john a foaf:Person .
-:john foaf:givenName &quot;John&quot; .
-:john foaf:mbox  &lt;mailto:johnny@example.org&gt; .</div>
 <p><a href="http://example.org/g3">http://example.org/g3</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
@@ -718,6 +746,13 @@ Update evaluation test
 :john foaf:givenName &quot;John&quot; .
 :john foaf:mbox  &lt;mailto:johnny@example.org&gt; .
 :john foaf:knows :sue .</div>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix :      &lt;http://example.org/&gt; .
+
+:john a foaf:Person .
+:john foaf:givenName &quot;John&quot; .
+:john foaf:mbox  &lt;mailto:johnny@example.org&gt; .</div>
 </div>
 
 <hr/>
@@ -1403,6 +1438,73 @@ Negative syntax test
 <div class="query">PREFIX : &lt;http://www.example.org/&gt;<br/><br/>SELECT ?O1 (COUNT(?O2) AS ?C)<br/>WHERE { ?S :p ?O1; :q ?O2 } GROUP BY (?O1 + ?O2)<br/></div>
 
 <hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/basic-update/manifest#insert-05 -->
+<h2 id="insert-05">INSERT same bnode twice</h2>
+Update evaluation test
+<h3>Input Dataset:</h3>
+<div class="dataset">
+<h4>Default Graph</h4>
+<h4>Named Graphs</h4>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+_:b :p :o .
+
+</div>
+</div>
+<h3>Update</h3>
+<a href="data-sparql11/basic-update/insert-05.ru">basic-update/insert-05.ru</a><br/>
+<div class="query">prefix : &lt;http://example.org/&gt;<br/>INSERT { GRAPH :g2  { ?S ?P ?O } }<br/> WHERE { GRAPH :g1  { ?S ?P ?O } } ;<br/>INSERT { GRAPH :g2  { ?S ?P ?O } }<br/> WHERE { GRAPH :g1  { ?S ?P ?O } }<br/></div>
+<h3>Result Dataset:</h3>
+<div class="dataset">
+<h4>Default Graph</h4>
+<h4>Named Graphs</h4>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+_:b :p :o .
+
+</div>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+_:b :p :o .
+
+</div>
+</div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/basic-update/manifest#insert-05a -->
+<h2 id="insert-05a">INSERT same bnode twice</h2>
+Update evaluation test
+<h3>Input Dataset:</h3>
+<div class="dataset">
+<h4>Default Graph</h4>
+<h4>Named Graphs</h4>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+_:b :p :o .
+
+</div>
+</div>
+<h3>Update</h3>
+<a href="data-sparql11/basic-update/insert-05a.ru">basic-update/insert-05a.ru</a><br/>
+<div class="query">PREFIX : &lt;http://example.org/&gt;<br/><br/>INSERT { GRAPH :g2  { ?S ?P ?O } }<br/>WHERE { GRAPH :g1  { ?S ?P ?O } } ;<br/><br/>INSERT { GRAPH :g2  { ?S ?P ?O } }<br/>WHERE { GRAPH :g1  { ?S ?P ?O } } ;<br/><br/>INSERT { GRAPH :g3 { :s :p ?count } }<br/>WHERE {<br/>	SELECT (COUNT(*) AS ?count) WHERE {<br/>		GRAPH :g2 { ?s ?p ?o }<br/>	}<br/>} ;<br/>DROP GRAPH :g1 ;<br/>DROP GRAPH :g2<br/></div>
+<h3>Result Dataset:</h3>
+<div class="dataset">
+<h4>Default Graph</h4>
+<h4>Named Graphs</h4>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+:s :p 1 .
+
+
+</div>
+</div>
+
+<hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/basic-update/manifest#insert-data-spo-named1 -->
 <h2 id="insert-data-spo-named1">Simple insert data named 1</h2>
 Update evaluation test
@@ -1916,7 +2018,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b1 -->
-<h2 id="b1">(none)</h2>
+<h2 id="b1">BINDINGS with subj-var, 1 row</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -1940,7 +2042,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b2 -->
-<h2 id="b2">(none)</h2>
+<h2 id="b2">BINDINGS with obj-var, 1 row</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -1965,7 +2067,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b3 -->
-<h2 id="b3">(none)</h2>
+<h2 id="b3">BINDINGS with 2 obj-vars, 1 row</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -1990,7 +2092,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b4 -->
-<h2 id="b4">(none)</h2>
+<h2 id="b4">BINDINGS with 2 obj-vars, 1 row with UNDEF</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -2015,7 +2117,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b5 -->
-<h2 id="b5">(none)</h2>
+<h2 id="b5">BINDINGS with 2 obj-vars, 2 rows with UNDEF</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -2040,7 +2142,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b6 -->
-<h2 id="b6">(none)</h2>
+<h2 id="b6">BINDINGS with pred-var, 1 row</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -2064,7 +2166,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b7 -->
-<h2 id="b7">(none)</h2>
+<h2 id="b7">BINDINGS with (OPTIONAL) obj-var, 1 row</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -2091,7 +2193,7 @@ Query evaluation test
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/bindings/manifest#b8 -->
-<h2 id="b8">(none)</h2>
+<h2 id="b8">BINDINGS with subj/obj-vars, 2 rows with UNDEF</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -2126,17 +2228,17 @@ Update evaluation test
 &lt;&gt; :name &quot;Default Graph&quot; .
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+:g2 :name &quot;G2&quot; ;
+	.
+</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 
 :g1 :name &quot;G1&quot; ;
 	:description &quot;Graph 1&quot; ;
-	.
-</div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-
-:g2 :name &quot;G2&quot; ;
 	.
 </div>
 </div>
@@ -2151,11 +2253,11 @@ Update evaluation test
 
 </div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 
 </div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 
 </div>
@@ -2199,17 +2301,17 @@ Update evaluation test
 
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+:g2 :name &quot;G2&quot; ;
+	.
+</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 
 :g1 :name &quot;G1&quot; ;
 	:description &quot;Graph 1&quot; ;
-	.
-</div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-
-:g2 :name &quot;G2&quot; ;
 	.
 </div>
 </div>
@@ -2278,17 +2380,17 @@ Update evaluation test
 &lt;&gt; :name &quot;Default Graph&quot; .
 </div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-
-:g2 :name &quot;G2&quot; ;
-	.
-</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 
 :g1 :name &quot;G1&quot; ;
 	:description &quot;Graph 1&quot; ;
+	.
+</div>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+:g2 :name &quot;G2&quot; ;
 	.
 </div>
 </div>
@@ -2543,14 +2645,14 @@ Update evaluation test
 :ron foaf:givenName &quot;Ronnie&quot; .
 :ron foaf:mbox  &lt;mailto:ronnie@example.org&gt; .</div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
 
 :jerry a foaf:Person .
 :jerry foaf:givenName &quot;Jerry&quot; .
 :jerry foaf:mbox  &lt;mailto:jerry@example.org&gt; .</div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
 
@@ -2596,14 +2698,14 @@ Update evaluation test
 :ron foaf:givenName &quot;Ronnie&quot; .
 :ron foaf:mbox  &lt;mailto:ronnie@example.org&gt; .</div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
 
 :jerry a foaf:Person .
 :jerry foaf:givenName &quot;Jerry&quot; .
 :jerry foaf:mbox  &lt;mailto:jerry@example.org&gt; .</div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix :      &lt;http://example.org/&gt; .
 
@@ -3034,6 +3136,16 @@ Update evaluation test
 :a foaf:knows :b .
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
+</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -3044,16 +3156,6 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
-</div>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
 </div>
 </div>
 <h3>Update</h3>
@@ -3072,6 +3174,16 @@ Update evaluation test
 :b foaf:mbox &quot;bob@example.org&quot; .
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
+</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -3082,16 +3194,6 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
-</div>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
 </div>
 </div>
 
@@ -3113,6 +3215,16 @@ Update evaluation test
 :a foaf:knows :b .
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
+</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -3123,16 +3235,6 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
-</div>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
 </div>
 </div>
 <h3>Update</h3>
@@ -3152,16 +3254,6 @@ Update evaluation test
 :a foaf:knows :b .
 </div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
-</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -3171,6 +3263,16 @@ Update evaluation test
 :b foaf:mbox &quot;bob@example.org&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
+</div>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
 </div>
 </div>
 
@@ -4097,7 +4199,7 @@ Update evaluation test
 :b foaf:knows :c .
 </div>
 <p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
 
 :c foaf:name &quot;Chris&quot; .
@@ -4164,6 +4266,16 @@ Update evaluation test
 
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
+</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4174,16 +4286,6 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
-</div>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
 </div>
 </div>
 <h3>Update</h3>
@@ -4203,15 +4305,6 @@ Update evaluation test
 :a foaf:knows :b .
 </div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:a foaf:knows :b .
-:b foaf:name &quot;Bob&quot; .
-:b foaf:mbox &quot;bob@example.org&quot; .
-:b foaf:knows :c .
-</div>
 <p><a href="http://example.org/g3">http://example.org/g3</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4221,6 +4314,15 @@ Update evaluation test
 :d foaf:name &quot;Dan&quot; .
 :d foaf:mbox &quot;dan@example.org&quot; .
 :c foaf:knows :d .
+</div>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:a foaf:knows :b .
+:b foaf:name &quot;Bob&quot; .
+:b foaf:mbox &quot;bob@example.org&quot; .
+:b foaf:knows :c .
 </div>
 </div>
 
@@ -4341,6 +4443,16 @@ Update evaluation test
 
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
+</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4351,16 +4463,6 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
-</div>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
 </div>
 </div>
 <h3>Update</h3>
@@ -4470,7 +4572,7 @@ Update evaluation test
 <div class="dataset">
 <h4>Default Graph</h4>
 <p><a href="data-sparql11/delete/delete-pre-03.ttl">delete/delete-pre-03.ttl</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
 
 :c foaf:name &quot;Chris&quot; .
@@ -4480,6 +4582,16 @@ Update evaluation test
 :c foaf:knows :d .
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
+</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4490,16 +4602,6 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
-</div>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
 </div>
 </div>
 <h3>Update</h3>
@@ -4550,16 +4652,6 @@ Update evaluation test
 <div class="dataset">
 <h4>Default Graph</h4>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
-</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4570,6 +4662,16 @@ Update evaluation test
 :b foaf:mbox &quot;bob@example.org&quot; .
 :a foaf:knows :b .
 
+</div>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
 </div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
@@ -4597,6 +4699,16 @@ Update evaluation test
 :b foaf:name &quot;Bob&quot; .
 :b foaf:mbox &quot;bob@example.org&quot; .
 </div>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
+</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4608,16 +4720,6 @@ Update evaluation test
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
 </div>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
-</div>
 </div>
 
 <hr/>
@@ -4628,16 +4730,6 @@ Update evaluation test
 <div class="dataset">
 <h4>Default Graph</h4>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:d foaf:name &quot;Dan&quot; .
-:d foaf:mbox &quot;dan@example.org&quot; .
-:c foaf:knows :d .
-</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4659,6 +4751,16 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
+</div>
+<p><a href="http://example.org/g3">http://example.org/g3</a></p>
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:d foaf:name &quot;Dan&quot; .
+:d foaf:mbox &quot;dan@example.org&quot; .
+:c foaf:knows :d .
 </div>
 </div>
 <h3>Update</h3>
@@ -4677,16 +4779,6 @@ Update evaluation test
 :b foaf:mbox &quot;bob@example.org&quot; .
 :b foaf:knows :c .
 </div>
-<p><a href="http://example.org/g1">http://example.org/g1</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:a foaf:name &quot;Alan&quot; .
-:a foaf:mbox &quot;alan@example.org&quot; .
-:b foaf:name &quot;Bob&quot; .
-:b foaf:mbox &quot;bob@example.org&quot; .
-:a foaf:knows :b .
-</div>
 <p><a href="http://example.org/g3">http://example.org/g3</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4696,6 +4788,16 @@ Update evaluation test
 :d foaf:name &quot;Dan&quot; .
 :d foaf:mbox &quot;dan@example.org&quot; .
 :c foaf:knows :d .
+</div>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:a foaf:name &quot;Alan&quot; .
+:a foaf:mbox &quot;alan@example.org&quot; .
+:b foaf:name &quot;Bob&quot; .
+:b foaf:mbox &quot;bob@example.org&quot; .
+:a foaf:knows :b .
 </div>
 </div>
 
@@ -4774,14 +4876,6 @@ Update evaluation test
 <div class="dataset">
 <h4>Default Graph</h4>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g1">http://example.org/g1</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:a foaf:name &quot;Alan&quot; .
-:a foaf:mbox &quot;alan@example.org&quot; .
-:a foaf:knows :b .
-</div>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4792,6 +4886,14 @@ Update evaluation test
 :c foaf:name &quot;Chris&quot; .
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
+</div>
+<p><a href="http://example.org/g1">http://example.org/g1</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:a foaf:name &quot;Alan&quot; .
+:a foaf:mbox &quot;alan@example.org&quot; .
+:a foaf:knows :b .
 </div>
 </div>
 
@@ -4904,7 +5006,7 @@ Update evaluation test
 <h4>Default Graph</h4>
 <h4>Named Graphs</h4>
 <p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
 
 :c foaf:name &quot;Chris&quot; .
@@ -4912,17 +5014,6 @@ Update evaluation test
 :d foaf:name &quot;Dan&quot; .
 :d foaf:mbox &quot;dan@example.org&quot; .
 :c foaf:knows :d .
-</div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:a foaf:knows :b .
-:b foaf:name &quot;Bob&quot; .
-:b foaf:mbox &quot;bob@example.org&quot; .
-:c foaf:name &quot;Chris&quot; .
-:c foaf:mbox &quot;chris@example.org&quot; .
-:b foaf:knows :c .
 </div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
@@ -4935,14 +5026,6 @@ Update evaluation test
 :a foaf:knows :b .
 
 </div>
-</div>
-<h3>Update</h3>
-<a href="data-sparql11/delete/delete-with-05.ru">delete/delete-with-05.ru</a><br/>
-<div class="query">PREFIX     : &lt;http://example.org/&gt; <br/>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt; <br/><br/>WITH &lt;http://example.org/g1&gt;<br/>DELETE <br/>{<br/>  ?s ?p ?o .<br/>}<br/>WHERE <br/>{ <br/>  ?s foaf:knows :b .<br/>  ?s ?p ?o <br/>}<br/></div>
-<h3>Result Dataset:</h3>
-<div class="dataset">
-<h4>Default Graph</h4>
-<h4>Named Graphs</h4>
 <p><a href="http://example.org/g2">http://example.org/g2</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4954,6 +5037,14 @@ Update evaluation test
 :c foaf:mbox &quot;chris@example.org&quot; .
 :b foaf:knows :c .
 </div>
+</div>
+<h3>Update</h3>
+<a href="data-sparql11/delete/delete-with-05.ru">delete/delete-with-05.ru</a><br/>
+<div class="query">PREFIX     : &lt;http://example.org/&gt; <br/>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt; <br/><br/>WITH &lt;http://example.org/g1&gt;<br/>DELETE <br/>{<br/>  ?s ?p ?o .<br/>}<br/>WHERE <br/>{ <br/>  ?s foaf:knows :b .<br/>  ?s ?p ?o <br/>}<br/></div>
+<h3>Result Dataset:</h3>
+<div class="dataset">
+<h4>Default Graph</h4>
+<h4>Named Graphs</h4>
 <p><a href="http://example.org/g3">http://example.org/g3</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -4970,6 +5061,17 @@ Update evaluation test
 
 :b foaf:name &quot;Bob&quot; .
 :b foaf:mbox &quot;bob@example.org&quot; .
+</div>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:a foaf:knows :b .
+:b foaf:name &quot;Bob&quot; .
+:b foaf:mbox &quot;bob@example.org&quot; .
+:c foaf:name &quot;Chris&quot; .
+:c foaf:mbox &quot;chris@example.org&quot; .
+:b foaf:knows :c .
 </div>
 </div>
 
@@ -4993,7 +5095,7 @@ Update evaluation test
 </div>
 <h4>Named Graphs</h4>
 <p><a href="http://example.org/g3">http://example.org/g3</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
+<div class="query">@prefix :           &lt;http://example.org/&gt; .
 @prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
 
 :c foaf:name &quot;Chris&quot; .
@@ -5065,17 +5167,17 @@ Update evaluation test
 &lt;&gt; :name &quot;Default Graph&quot; .
 </div>
 <h4>Named Graphs</h4>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+:g2 :name &quot;G2&quot; ;
+	.
+</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 
 :g1 :name &quot;G1&quot; ;
 	:description &quot;Graph 1&quot; ;
-	.
-</div>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-
-:g2 :name &quot;G2&quot; ;
 	.
 </div>
 </div>
@@ -5101,17 +5203,17 @@ Update evaluation test
 &lt;&gt; :name &quot;Default Graph&quot; .
 </div>
 <h4>Named Graphs</h4>
-<p><a href="http://example.org/g2">http://example.org/g2</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-
-:g2 :name &quot;G2&quot; ;
-	.
-</div>
 <p><a href="http://example.org/g1">http://example.org/g1</a></p>
 <div class="query">@prefix : &lt;http://example.org/&gt; .
 
 :g1 :name &quot;G1&quot; ;
 	:description &quot;Graph 1&quot; ;
+	.
+</div>
+<p><a href="http://example.org/g2">http://example.org/g2</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+
+:g2 :name &quot;G2&quot; ;
 	.
 </div>
 </div>
@@ -7504,7 +7606,7 @@ Query evaluation test
 @prefix : &lt;http://example.org/&gt; .
 
 # string data
-:s8 :str &quot;\u98DF&quot;, &quot;&eacute;&pound;&#159;&quot; .
+:s8 :str &quot;\u98DF&quot; .
 </div>
 <h4>Named Graphs</h4>
 </div>
@@ -7567,7 +7669,7 @@ Query evaluation test
 @prefix : &lt;http://example.org/&gt; .
 
 # string data
-:s8 :str &quot;\u98DF&quot;, &quot;&eacute;&pound;&#159;&quot; .
+:s8 :str &quot;\u98DF&quot; .
 </div>
 <h4>Named Graphs</h4>
 </div>
@@ -7630,7 +7732,7 @@ Query evaluation test
 @prefix : &lt;http://example.org/&gt; .
 
 # string data
-:s8 :str &quot;\u98DF&quot;, &quot;&eacute;&pound;&#159;&quot; .
+:s8 :str &quot;\u98DF&quot; .
 </div>
 <h4>Named Graphs</h4>
 </div>
@@ -7682,8 +7784,8 @@ Query evaluation test
 <p><a href="data-sparql11/functions/starts01.srx">functions/starts01.srx</a></p>
 
 <hr/>
-<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/functions/manifest#strafter01 -->
-<h2 id="strafter01">STRAFTER()</h2>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/functions/manifest#strafter01a -->
+<h2 id="strafter01a">STRAFTER()</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -7709,11 +7811,34 @@ Query evaluation test
 <a href="data-sparql11/functions/strafter01.rq">functions/strafter01.rq</a><br/>
 <div class="query">PREFIX : &lt;http://example.org/&gt;<br/>PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;<br/>SELECT ?s (STRAFTER(?str,&quot;e&quot;) AS ?suffix) WHERE {<br/>	?s :str ?str<br/>}<br/></div>
 <h3>Results</h3>
-<p><a href="data-sparql11/functions/strafter01.srx">functions/strafter01.srx</a></p>
+<p><a href="data-sparql11/functions/strafter01a.srx">functions/strafter01a.srx</a></p>
 
 <hr/>
-<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/functions/manifest#strbefore01 -->
-<h2 id="strbefore01">STRBEFORE()</h2>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/functions/manifest#strafter02 -->
+<h2 id="strafter02">STRAFTER() datatyping</h2>
+Query evaluation test
+<h3>Input Dataset:</h3>
+<div class="dataset">
+<h4>Default Graph</h4>
+<p><a href="data-sparql11/functions/data4.ttl">functions/data4.ttl</a></p>
+<div class="query">@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix : &lt;http://example.org/&gt; .
+
+:s1 :str &quot;abc&quot; .
+:s2 :str &quot;abc&quot;@en .
+:s3 :str &quot;abc&quot;^^xsd:string .
+</div>
+<h4>Named Graphs</h4>
+</div>
+<h3>Query</h3>
+<a href="data-sparql11/functions/strafter02.rq">functions/strafter02.rq</a><br/>
+<div class="query">PREFIX : &lt;http://example.org/&gt;<br/>PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;<br/>SELECT<br/>	?s<br/>	?str<br/>	(STRAFTER(?str,&quot;b&quot;) AS ?ab)<br/>	(STRAFTER(?str,&quot;ab&quot;) AS ?aab)<br/>	(STRAFTER(?str,&quot;b&quot;@cy) AS ?abcy)<br/>	(STRAFTER(?str,&quot;&quot;) AS ?a)<br/>	(STRAFTER(?str,&quot;&quot;@en) AS ?aen)<br/>	(STRAFTER(?str,&quot;b&quot;^^xsd:string) AS ?abx)<br/>	(STRAFTER(?str,&quot;xyz&quot;^^xsd:string) AS ?axyzx)<br/>WHERE {<br/>	?s :str ?str<br/>}<br/></div>
+<h3>Results</h3>
+<p><a href="data-sparql11/functions/strafter02.srx">functions/strafter02.srx</a></p>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/functions/manifest#strbefore01a -->
+<h2 id="strbefore01a">STRBEFORE()</h2>
 Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
@@ -7739,7 +7864,30 @@ Query evaluation test
 <a href="data-sparql11/functions/strbefore01.rq">functions/strbefore01.rq</a><br/>
 <div class="query">PREFIX : &lt;http://example.org/&gt;<br/>PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;<br/>SELECT ?s (STRBEFORE(?str,&quot;s&quot;) AS ?prefix) WHERE {<br/>	?s :str ?str<br/>}<br/></div>
 <h3>Results</h3>
-<p><a href="data-sparql11/functions/strbefore01.srx">functions/strbefore01.srx</a></p>
+<p><a href="data-sparql11/functions/strbefore01a.srx">functions/strbefore01a.srx</a></p>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/functions/manifest#strbefore02 -->
+<h2 id="strbefore02">STRBEFORE() datatyping</h2>
+Query evaluation test
+<h3>Input Dataset:</h3>
+<div class="dataset">
+<h4>Default Graph</h4>
+<p><a href="data-sparql11/functions/data4.ttl">functions/data4.ttl</a></p>
+<div class="query">@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix : &lt;http://example.org/&gt; .
+
+:s1 :str &quot;abc&quot; .
+:s2 :str &quot;abc&quot;@en .
+:s3 :str &quot;abc&quot;^^xsd:string .
+</div>
+<h4>Named Graphs</h4>
+</div>
+<h3>Query</h3>
+<a href="data-sparql11/functions/strbefore02.rq">functions/strbefore02.rq</a><br/>
+<div class="query">PREFIX : &lt;http://example.org/&gt;<br/>PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;<br/>SELECT<br/>	?s<br/>	?str<br/>	(STRBEFORE(?str,&quot;b&quot;) AS ?bb)<br/>	(STRBEFORE(?str,&quot;bc&quot;) AS ?bbc)<br/>	(STRBEFORE(?str,&quot;b&quot;@cy) AS ?bbcy)<br/>	(STRBEFORE(?str,&quot;&quot;) AS ?b)<br/>	(STRBEFORE(?str,&quot;&quot;@en) AS ?ben)<br/>	(STRBEFORE(?str,&quot;b&quot;^^xsd:string) AS ?bbx)<br/>	(STRBEFORE(?str,&quot;xyz&quot;^^xsd:string) AS ?bxyzx)<br/>WHERE {<br/>	?s :str ?str<br/>}<br/></div>
+<h3>Results</h3>
+<p><a href="data-sparql11/functions/strbefore02.srx">functions/strbefore02.srx</a></p>
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/functions/manifest#strdt01 -->
@@ -7994,6 +8142,8 @@ Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
 <h4>Default Graph</h4>
+<p><a href="data-sparql11/functions/data-empty.nt">functions/data-empty.nt</a></p>
+<div class="query"></div>
 <h4>Named Graphs</h4>
 </div>
 <h3>Query</h3>
@@ -8214,6 +8364,8 @@ Query evaluation test
 <h3>Input Dataset:</h3>
 <div class="dataset">
 <h4>Default Graph</h4>
+<p><a href="data-sparql11/functions/data-empty.nt">functions/data-empty.nt</a></p>
+<div class="query"></div>
 <h4>Named Graphs</h4>
 </div>
 <h3>Query</h3>
@@ -10205,6 +10357,101 @@ Query evaluation test
 <p><a href="data-sparql11/property-path/pp37.srx">property-path/pp37.srx</a></p>
 
 <hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#bad-multiple-queries -->
+<h2 id="bad-multiple-queries">invoke query operation with more than one query string</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#bad-query-method -->
+<h2 id="bad-query-method">invoke query operation with a method other than GET or POST</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#bad-query-missing-direct-type -->
+<h2 id="bad-query-missing-direct-type">invoke query operation with SPARQL body, but without application/sparql-query media type</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#bad-query-missing-form-type -->
+<h2 id="bad-query-missing-form-type">invoke query operation with url-encoded body, but without application/x-www-url-form-urlencoded media type</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#bad-query-non-utf8 -->
+<h2 id="bad-query-non-utf8">invoke query operation with direct POST, but with a non-UTF8 encoding (UTF-16)</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#bad-query-syntax -->
+<h2 id="bad-query-syntax">invoke query operation with invalid query syntax (4XX result)</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#bad-query-wrong-media-type -->
+<h2 id="bad-query-wrong-media-type">invoke query operation with a POST with media type that&#39;s not url-encoded or application/sparql-query</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-content-type-ask -->
+<h2 id="query-content-type-ask">query appropriate content type (expect one of: XML, JSON)</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-content-type-construct -->
+<h2 id="query-content-type-construct">query appropriate content type (expect one of: RDF/XML, Turtle, N-Triples, RDFa)</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-content-type-describe -->
+<h2 id="query-content-type-describe">query appropriate content type (expect one of: RDF/XML, Turtle, N-Triples, RDFa)</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-content-type-select -->
+<h2 id="query-content-type-select">query appropriate content type (expect one of: XML, JSON, CSV, TSV)</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-dataset-default-graph -->
+<h2 id="query-dataset-default-graph">query with protocol-specified default graph</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-dataset-default-graphs -->
+<h2 id="query-dataset-default-graphs">query with protocol-specified default graphs</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-dataset-full -->
+<h2 id="query-dataset-full">query with protocol-specified dataset (both named and default graphs)</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-dataset-named-graphs -->
+<h2 id="query-dataset-named-graphs">query with protocol-specified named graphs</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-get -->
+<h2 id="query-get">query via GET</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-multiple-dataset -->
+<h2 id="query-multiple-dataset">query specifying dataset in both query string and protocol; test for use of protocol-specified dataset</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-post-direct -->
+<h2 id="query-post-direct">query via POST directly</h2>
+Protocol test
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/protocol/manifest#query-post-form -->
+<h2 id="query-post-form">query via URL-encoded POST</h2>
+Protocol test
+
+<hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/service-description/manifest#conforms-to-schema -->
 <h2 id="conforms-to-schema">Service description conforms to schema</h2>
 Service description test
@@ -10261,6 +10508,17 @@ Query evaluation test
 <h4>Default Graph</h4>
 <h4>Named Graphs</h4>
 </div>
+<h4>Remote Endpoint: http://example2.org/sparql</h4>
+<div class="dataset">
+<h5>Default Graph</h5>
+<p><a href="data-sparql11/service/data02endpoint2.ttl">service/data02endpoint2.ttl</a></p>
+<div class="query">@prefix : &lt;http://example.org/&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:a foaf:interest &quot;SPARQL 1.1 Basic Federated Query&quot; .
+</div>
+<h5>Named Graphs</h5>
+</div>
 <h4>Remote Endpoint: http://example1.org/sparql</h4>
 <div class="dataset">
 <h5>Default Graph</h5>
@@ -10270,17 +10528,6 @@ Query evaluation test
 
 :a foaf:name &quot;Alan&quot; .
 :b foaf:name &quot;Bob&quot; .
-</div>
-<h5>Named Graphs</h5>
-</div>
-<h4>Remote Endpoint: http://example2.org/sparql</h4>
-<div class="dataset">
-<h5>Default Graph</h5>
-<p><a href="data-sparql11/service/data02endpoint2.ttl">service/data02endpoint2.ttl</a></p>
-<div class="query">@prefix : &lt;http://example.org/&gt; .
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-
-:a foaf:interest &quot;SPARQL 1.1 Basic Federated Query&quot; .
 </div>
 <h5>Named Graphs</h5>
 </div>
@@ -11249,14 +11496,6 @@ Syntax test
 <div class="query">SELECT * { } BINDINGS ?x ?y { (1 2) }<br/></div>
 
 <hr/>
-<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_39 -->
-<h2 id="test_39">syntax-bindings-01.rq</h2>
-Syntax test
-<h3>Query</h3>
-<a href="data-sparql11/syntax-query/syntax-bindings-01.rq">syntax-query/syntax-bindings-01.rq</a><br/>
-<div class="query">SELECT ?Z { ?s ?p ?o . BIND(?o+1 AS ?Z) }<br/></div>
-
-<hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_4 -->
 <h2 id="test_4">syntax-select-expr-04.rq</h2>
 Syntax test
@@ -11369,14 +11608,6 @@ Negative syntax test
 <div class="query">SELECT * { } BINDINGS ?x ?y { (1 2) (3) }<br/></div>
 
 <hr/>
-<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_52 -->
-<h2 id="test_52">PrefixName with backslash-escaped colons</h2>
-Syntax test
-<h3>Query</h3>
-<a href="data-sparql11/syntax-query/qname-escape-01.rq">syntax-query/qname-escape-01.rq</a><br/>
-<div class="query">PREFIX og: &lt;http://ogp.me/ns#&gt;<br/>SELECT * WHERE {<br/>	?page og:audio\:title ?title<br/>}<br/></div>
-
-<hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_53 -->
 <h2 id="test_53">PrefixName with hex-encoded colons</h2>
 Syntax test
@@ -11385,12 +11616,116 @@ Syntax test
 <div class="query">PREFIX og: &lt;http://ogp.me/ns#&gt;<br/>SELECT * WHERE {<br/>	?page og:audio%3Atitle ?title<br/>}<br/></div>
 
 <hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_54 -->
+<h2 id="test_54">PrefixName with unescaped colons</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/qname-escape-03.rq">syntax-query/qname-escape-03.rq</a><br/>
+<div class="query">PREFIX og: &lt;http://ogp.me/ns#&gt;<br/>SELECT * WHERE {<br/>	?page og:audio:title ?title<br/>}<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_55 -->
+<h2 id="test_55">syntax-BINDscope1.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope1.rq">syntax-query/syntax-BINDscope1.rq</a><br/>
+<div class="query"> PREFIX : &lt;http://www.example.org&gt;<br/> SELECT *<br/> WHERE {<br/>    :s :p ?o .<br/>    BIND((1+?o) AS ?o1)<br/>    :s :q ?o1<br/> }<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_56 -->
+<h2 id="test_56">syntax-BINDscope2.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope2.rq">syntax-query/syntax-BINDscope2.rq</a><br/>
+<div class="query"> PREFIX : &lt;http://www.example.org&gt;<br/> SELECT *<br/> WHERE {<br/>    :s :p ?o .<br/>    :s :q ?o1<br/>    { BIND((1+?o) AS ?o1) }<br/> }<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_57 -->
+<h2 id="test_57">syntax-BINDscope3.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope3.rq">syntax-query/syntax-BINDscope3.rq</a><br/>
+<div class="query"> PREFIX : &lt;http://www.example.org&gt;<br/> SELECT *<br/> WHERE {<br/>    { <br/>    :s :p ?o .<br/>    :s :q ?o1<br/>    }<br/>    { BIND((1+?o) AS ?o1) }<br/> }<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_58 -->
+<h2 id="test_58">syntax-BINDscope4.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope4.rq">syntax-query/syntax-BINDscope4.rq</a><br/>
+<div class="query">PREFIX : &lt;http://www.example.org&gt;<br/>SELECT *<br/>   {<br/>    { BIND (1 AS ?Y) }<br/>     UNION<br/>    { :s :p ?Y }<br/>  }<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_59 -->
+<h2 id="test_59">syntax-BINDscope5.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope5.rq">syntax-query/syntax-BINDscope5.rq</a><br/>
+<div class="query">PREFIX : &lt;http://www.example.org&gt;<br/>SELECT *<br/>   {<br/>    { :s :p ?Y }<br/>     UNION<br/>    { BIND (1 AS ?Y) } <br/>   }<br/></div>
+
+<hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_6 -->
 <h2 id="test_6">syntax-aggregate-01.rq</h2>
 Syntax test
 <h3>Query</h3>
 <a href="data-sparql11/syntax-query/syntax-aggregate-01.rq">syntax-query/syntax-aggregate-01.rq</a><br/>
 <div class="query">SELECT (COUNT(*) AS ?count) {}<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_60 -->
+<h2 id="test_60">syntax-BINDscope6.rq</h2>
+Negative syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope6.rq">syntax-query/syntax-BINDscope6.rq</a><br/>
+<div class="query"> PREFIX : &lt;http://www.example.org&gt;<br/> SELECT *<br/> WHERE {<br/>    :s :p ?o .<br/>    :s :q ?o1 .<br/>    BIND((1+?o) AS ?o1)<br/> }  <br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_61 -->
+<h2 id="test_61">syntax-BINDscope7.rq</h2>
+Negative syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope7.rq">syntax-query/syntax-BINDscope7.rq</a><br/>
+<div class="query">PREFIX : &lt;http://www.example.org&gt;<br/> SELECT *<br/> WHERE {<br/>    {<br/>    :s :p ?o .<br/>    :s :q ?o1 .<br/>    }<br/>    BIND((1+?o) AS ?o1)<br/> }  <br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_62 -->
+<h2 id="test_62">syntax-BINDscope8.rq</h2>
+Negative syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-BINDscope8.rq">syntax-query/syntax-BINDscope8.rq</a><br/>
+<div class="query">PREFIX : &lt;http://www.example.org&gt;<br/>SELECT *<br/>   {<br/>    {<br/>    { :s :p ?Y }<br/>     UNION<br/>    { :s :p ?Z }<br/>    }<br/>    BIND (1 AS ?Y) <br/>   }<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_63 -->
+<h2 id="test_63">syntax-propertyPaths-01.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-propertyPaths-01.rq">syntax-query/syntax-propertyPaths-01.rq</a><br/>
+<div class="query">PREFIX : &lt;http://www.example.org/&gt;<br/><br/>SELECT ?X WHERE<br/>{ <br/>  [ :p|:q|:r ?X ]<br/>}<br/><br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_64 -->
+<h2 id="test_64">syntax-SELECTscope1.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-SELECTscope1.rq">syntax-query/syntax-SELECTscope1.rq</a><br/>
+<div class="query">SELECT *<br/>WHERE {<br/>  {SELECT (1 AS ?X ) {}<br/>  }<br/>  UNION<br/>  {SELECT (2 AS ?X ) {}<br/>  }<br/>}<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_65 -->
+<h2 id="test_65">syntax-SELECTscope2</h2>
+Negative syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-SELECTscope2.rq">syntax-query/syntax-SELECTscope2.rq</a><br/>
+<div class="query">SELECT (1 AS ?X ) <br/>  {<br/>    SELECT (2 AS ?X ) {} <br/>  }<br/></div>
+
+<hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_66 -->
+<h2 id="test_66">syntax-SELECTscope3.rq</h2>
+Syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-query/syntax-SELECTscope3.rq">syntax-query/syntax-SELECTscope3.rq</a><br/>
+<div class="query">SELECT *<br/>WHERE {<br/>  {SELECT (1 AS ?X ) {}<br/>  }<br/>  {SELECT (1 AS ?X ) {}<br/>  }<br/>}<br/></div>
 
 <hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-query/manifest#test_7 -->
@@ -11801,6 +12136,14 @@ Negative update syntax test
 <div class="query"># BNode in DELETE DATA<br/>DELETE DATA { _:a &lt;p&gt; &lt;o&gt; }<br/></div>
 
 <hr/>
+<!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-update-1/manifest#test_53 -->
+<h2 id="test_53">syntax-update-53.ru</h2>
+Update syntax test
+<h3>Query</h3>
+<a href="data-sparql11/syntax-update-1/syntax-update-53.ru">syntax-update-1/syntax-update-53.ru</a><br/>
+<div class="query">PREFIX : &lt;http://www.example.org/&gt;<br/><br/>INSERT DATA { <br/>              GRAPH&lt;g1&gt; { _:b1 :p :o } <br/>              GRAPH&lt;g2&gt; { _:b1 :p :o } <br/>            }<br/></div>
+
+<hr/>
 <!-- http://www.w3.org/2009/sparql/docs/tests/data-sparql11/syntax-update-1/manifest#test_6 -->
 <h2 id="test_6">syntax-update-06.ru</h2>
 Update syntax test
@@ -12150,7 +12493,7 @@ Update evaluation test
 	Generated for the <a href="http://www.w3.org/2009/sparql/docs/tests/">SPARQL 1.1 test suite</a> by <a href="https://github.com/kasei/SPARQL-1.1-Implementation-Report">SPARQL-1.1-Implementation-Report</a>.
 	Direct new implementation reports and feedback to <a href="mailto:public-rdf-dawg-comments@w3.org">public-rdf-dawg-comments@w3.org</a>.
 </p>
-<p class="foot">Tue May  8 15:35:59 2012 GMT</p>
-$Id: summary.html,v 1.2 2012/05/09 03:39:50 gwilliam Exp $
+<p class="foot">Tue Jun 19 00:12:48 2012 GMT</p>
+$Id: summary.html,v 1.3 2012/06/19 01:16:32 gwilliam Exp $
 </body>
 </html>
