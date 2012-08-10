@@ -17,15 +17,18 @@
 
 :returns-rdf rdf:type mf:ServiceDescriptionTest ;
        mf:name    "GET on endpoint returns RDF" ;
-       dawgt:approval dawgt:NotClassified ;
+       dawgt:approval dawgt:Approved ;
+       dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-07-31#resolution_2> ;
        .
 
 :has-endpoint-triple rdf:type mf:ServiceDescriptionTest ;
        mf:name    "Service description contains a matching sd:endpoint triple" ;
-       dawgt:approval dawgt:NotClassified ;
+       dawgt:approval dawgt:Approved ;
+       dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-07-31#resolution_2> ;
        .
 
 :conforms-to-schema rdf:type mf:ServiceDescriptionTest ;
        mf:name    "Service description conforms to schema" ;
-       dawgt:approval dawgt:NotClassified ;
+       dawgt:approval dawgt:Approved ;
+       dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-07-31#resolution_2> ;
        .
