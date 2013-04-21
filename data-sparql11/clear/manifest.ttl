@@ -16,11 +16,10 @@
 	:dawg-clear-all-01
    ).
 
-:dawg-clear-default-01 a mf:UpdateEvaluationTest ;
+:dawg-clear-default-01 a ut:UpdateEvaluationTest ;
     mf:name    "CLEAR DEFAULT" ;
     rdfs:comment "This is a CLEAR of the default graph" ;
-    dawgt:approval dawgt:Approved;
-    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-02-07#resolution_3> ;
+    dawgt:approval dawgt:NotClassified ;
     mf:action [
     			ut:request <clear-default-01.ru> ; 
                 ut:data <clear-default.ttl> ;
@@ -38,11 +37,10 @@
               ] ;
     .
 
-:dawg-clear-graph-01 a mf:UpdateEvaluationTest ;
+:dawg-clear-graph-01 a ut:UpdateEvaluationTest ;
     mf:name    "CLEAR GRAPH" ;
     rdfs:comment "This is a CLEAR of an existing named graph" ;
-    dawgt:approval dawgt:Approved;
-    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-02-07#resolution_3> ;
+    dawgt:approval dawgt:NotClassified ;
     mf:action [
     			ut:request <clear-graph-01.ru> ; 
                 ut:data <clear-default.ttl> ;
@@ -60,11 +58,10 @@
               ] ;
     .
 
-:dawg-clear-named-01 a mf:UpdateEvaluationTest ;
+:dawg-clear-named-01 a ut:UpdateEvaluationTest ;
     mf:name    "CLEAR NAMED" ;
     rdfs:comment "This is a CLEAR of all the named graphs" ;
-    dawgt:approval dawgt:Approved;
-    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-02-07#resolution_3> ;
+    dawgt:approval dawgt:NotClassified ;
     mf:action [
     			ut:request <clear-named-01.ru> ; 
                 ut:data <clear-default.ttl> ;
@@ -82,11 +79,10 @@
               ] ;
     .
 
-:dawg-clear-all-01 a mf:UpdateEvaluationTest ;
+:dawg-clear-all-01 a ut:UpdateEvaluationTest ;
     mf:name    "CLEAR ALL" ;
     rdfs:comment "This is a CLEAR of all graphs (default and named)" ;
-    dawgt:approval dawgt:Approved;
-    dawgt:approvedBy <http://www.w3.org/2009/sparql/meeting/2012-02-07#resolution_3> ;
+    dawgt:approval dawgt:NotClassified ;
     mf:action [
     			ut:request <clear-all-01.ru> ; 
                 ut:data <clear-default.ttl> ;
